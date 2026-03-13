@@ -1,0 +1,84 @@
+.footer {
+    background: var(--bg-dark);
+    color: var(--text-inverse);
+    margin-top: 60px;
+}
+
+.inner {
+    display: flex;
+    gap: 48px;
+    padding: 48px 0 32px;
+    flex-wrap: wrap;
+}
+
+.brand {
+    flex: 1;
+    min-width: 220px;
+}
+
+.logo {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.highlight {
+    color: var(--primary);
+}
+
+.tagline {
+    margin-top: 12px;
+    color: var(--text-tertiary);
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.links {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+.linkGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 140px;
+}
+
+.linkGroup h4 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-tertiary);
+    margin-bottom: 4px;
+}
+
+.linkGroup a {
+    font-size: 14px;
+    color: #D1D5DB;
+    transition: color var(--transition-fast);
+}
+
+.linkGroup a:hover {
+    color: var(--primary);
+}
+
+.bottom {
+    border-top: 1px solid #374151;
+    padding: 16px 0;
+}
+
+.bottom p {
+    font-size: 13px;
+    color: var(--text-tertiary);
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    .footer {
+        display: none;
+    }
+}
