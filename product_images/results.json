@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Oreo Biscuits",
+    "url": "https://ahitvfafdnvmkkfvghbe.supabase.co/storage/v1/object/public/product_images/snacks/oreo_biscuits.png",
+    "success": true
+  },
+  {
+    "name": "Parle-G",
+    "url": "https://ahitvfafdnvmkkfvghbe.supabase.co/storage/v1/object/public/product_images/snacks/parle_g.png",
+    "success": true
+  }
+]
