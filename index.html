@@ -4,11 +4,17 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#1a1f4e" />
     <title>Go To Mart &mdash; Fast, Fresh, Everyday Essentials</title>
     <meta name="description" content="Get groceries, vegetables, and daily essentials delivered fast." />
+    <style>
+      body {
+        background: #1a1f4e; /* Keep dark background during React mount */
+      }
+    </style>
   </head>
   <body>
+    <!-- React root -->
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP-5veCSAI4SvND7h0kIpAv5plZCVudfM&libraries=geocoding"></script>

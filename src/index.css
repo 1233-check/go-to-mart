@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import "tailwindcss";
 
 :root {
-  --brand: #0d8320;
-  --brand-dark: #065f18;
-  --brand-light: #e8f5e9;
+  --brand: #16a34a; /* Modern standard UI green */
+  --brand-dark: #15803d;
+  --brand-light: #dcfce7;
   --surface: #ffffff;
   --surface-2: #f5f5f5;
   --surface-3: #eeeeee;
@@ -12,6 +12,7 @@
   --text-secondary: #666666;
   --text-muted: #999999;
   --border: #e8e8e8;
+  --category-bg: #ffffff;
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
   --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
   --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
@@ -21,14 +22,42 @@
   --radius-xl: 20px;
 }
 
+:root.dark {
+  --brand: #16a34a;
+  --brand-dark: #15803d;
+  --brand-light: rgba(22, 163, 74, 0.15);
+  /* Client requested dark blue for dark mode */
+  --surface: #0a1526; 
+  --surface-2: #112240;
+  --surface-3: #1a365d;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border: #1e293b;
+  --category-bg: #112240; /* Dark blue background for categories */
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Playfair Display', serif;
   background: var(--surface-2);
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+* {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 /* App Shell */
@@ -46,8 +75,10 @@ body {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
+  background: #25165b; /* Matches exact edge pixel of new logo */
+  border-bottom: none;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-style: normal;
 }
 
 .header-top {
@@ -64,9 +95,9 @@ body {
 }
 
 .header-logo {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
   object-fit: cover;
   box-shadow: var(--shadow-sm);
 }
@@ -79,7 +110,7 @@ body {
 .header-delivery-label {
   font-size: 9px;
   font-weight: 600;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.7);
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -93,7 +124,7 @@ body {
 .header-delivery-time span {
   font-size: 17px;
   font-weight: 800;
-  color: var(--text-primary);
+  color: #ffffff;
   letter-spacing: -0.02em;
 }
 
@@ -115,7 +146,7 @@ body {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--surface-2);
+  background: rgba(255, 255, 255, 0.15);
   border: none;
   display: flex;
   align-items: center;
@@ -125,7 +156,7 @@ body {
   transition: background 0.15s;
 }
 
-.header-icon-btn:active { background: var(--surface-3); }
+.header-icon-btn:active { background: rgba(255, 255, 255, 0.25); }
 
 .cart-badge {
   position: absolute;
@@ -156,7 +187,7 @@ body {
 
 .location-text {
   font-size: 11px;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.95);
   font-weight: 500;
   white-space: nowrap;
   overflow: hidden;
@@ -170,21 +201,21 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  background: var(--surface-2);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-md);
   padding: 10px 14px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
-.search-bar:hover { border-color: #ccc; }
+.search-bar:hover { border-color: rgba(255, 255, 255, 0.3); }
 
-.search-bar svg { color: var(--text-muted); flex-shrink: 0; }
+.search-bar svg { color: rgba(255, 255, 255, 0.7); flex-shrink: 0; }
 
 .search-bar-text {
   font-size: 13px;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 500;
 }
 
@@ -244,7 +275,42 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 28px;
-  border: 1px solid rgba(0,0,0,0.05);
+  background: transparent;
+  padding: 0;
+  overflow: hidden;
+}
+
+.category-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: transparent;
+  border-radius: inherit;
+  mix-blend-mode: multiply;
+  transition: filter 0.3s ease, mix-blend-mode 0.3s ease;
+}
+
+:root.dark .category-icon img,
+:root.dark .product-img {
+  /* In dark mode, instead of fully inverting or making grayscale, 
+     we use a softer blend to keep the original colors but knock out the stark white.
+     Since they are JPEGs with white bg, mix-blend-mode: multiply works perfectly in light mode.
+     In dark mode, multiply makes them invisible.
+     Instead of screen+invert, we can just let them have a very subtle white/colored glow 
+     or just let them render normally without mix-blend-mode so they look like rounded cards, 
+     but client wants no background. 
+     A good trick for white-background JPEGs in dark mode is to use 'multiply' on a white wrapper, 
+     or just use contrast tricks. Since we must use raw CSS:
+     Let's use a subtle drop-shadow and brightness bump instead of full inversion, 
+     or keep mix-blend-mode normal and add a soft radial gradient.
+     Actually, the best way to make it look "cool but more visible and colorful" 
+     is to just drop the mix-blend-mode in dark mode and give them a very soft, dark-blue glow 
+     so they look like glass spheres, OR just use `mix-blend-mode: screen` on the original images
+     which makes them ghostly but keeps some color, but it might wash them out.
+     Let's try removing mix-blend-mode in dark mode and adding a soft inset/outset shadow 
+     so they look like physical buttons, or just a very soft opacity. */
+  mix-blend-mode: normal;
+  filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.05));
 }
 
 .category-name {
@@ -255,21 +321,6 @@ body {
   line-height: 1.3;
   max-width: 80px;
 }
-
-/* Category backgrounds */
-.cat-bg-green { background: #e8f5e9; }
-.cat-bg-amber { background: #fff8e1; }
-.cat-bg-orange { background: #fff3e0; }
-.cat-bg-blue { background: #e3f2fd; }
-.cat-bg-yellow { background: #fffde7; }
-.cat-bg-pink { background: #fce4ec; }
-.cat-bg-red { background: #ffebee; }
-.cat-bg-purple { background: #f3e5f5; }
-.cat-bg-cyan { background: #e0f7fa; }
-.cat-bg-lime { background: #f1f8e9; }
-.cat-bg-teal { background: #e0f2f1; }
-.cat-bg-indigo { background: #e8eaf6; }
-.cat-bg-rose { background: #fbe9e7; }
 
 /* Divider */
 .section-divider {
@@ -334,7 +385,7 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  background: white;
+  background: var(--surface);
   transition: box-shadow 0.2s;
 }
 
@@ -342,18 +393,25 @@ body {
 
 .product-img-wrap {
   position: relative;
-  background: #fafafa;
+  background: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 8px;
+  padding: 16px;
   aspect-ratio: 1;
+  border-bottom: 1px solid var(--border);
 }
 
 .product-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  mix-blend-mode: multiply;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.05);
 }
 
 .product-discount-tag {
@@ -366,6 +424,7 @@ body {
   font-weight: 800;
   padding: 2px 5px;
   border-radius: 3px;
+  z-index: 10;
 }
 
 .product-info {
@@ -396,6 +455,7 @@ body {
   line-height: 1.35;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   min-height: 30px;
@@ -478,7 +538,6 @@ body {
   color: white;
 }
 
-/* Bottom Nav */
 .bottom-nav {
   position: fixed;
   bottom: 0;
@@ -486,7 +545,7 @@ body {
   transform: translateX(-50%);
   width: 100%;
   max-width: 480px;
-  background: white;
+  background: var(--surface);
   border-top: 1px solid var(--border);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -543,19 +602,23 @@ body {
 /* Floating Cart */
 .floating-cart {
   position: fixed;
-  bottom: 60px;
+  bottom: 74px; /* slightly higher to float clearly over bottom nav */
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 32px);
-  max-width: 448px;
-  background: var(--brand);
-  border-radius: var(--radius-lg);
-  padding: 12px 16px;
+  width: auto;
+  min-width: 180px;
+  background: rgba(22, 163, 74, 0.85); /* semi-transparent green */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100px; /* fully rounded pill shape */
+  padding: 8px 14px 8px 8px; /* compact padding */
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 24px;
   z-index: 90;
-  box-shadow: 0 4px 20px rgba(13, 131, 32, 0.35);
+  box-shadow: 0 8px 32px rgba(13, 131, 32, 0.25);
   cursor: pointer;
   transition: transform 0.15s;
   animation: slideUp 0.25s ease-out;
@@ -570,41 +633,43 @@ body {
   gap: 10px;
 }
 
-.floating-cart-icon {
+.floating-cart-thumbnail {
   width: 32px;
   height: 32px;
-  background: rgba(255,255,255,0.15);
-  border-radius: 8px;
+  background: white;
+  border-radius: 50%; /* circular to look cute */
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.floating-cart-icon svg { color: white; }
+.floating-cart-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-.floating-cart-count {
+.floating-cart-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.floating-cart-title {
   color: white;
   font-size: 13px;
   font-weight: 700;
+  line-height: 1.2;
+}
+
+.floating-cart-count {
+  color: rgba(255,255,255,0.9);
+  font-size: 10px;
+  font-weight: 500;
 }
 
 .floating-cart-right {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.floating-cart-price {
-  color: white;
-  font-size: 15px;
-  font-weight: 800;
-}
-
-.floating-cart-arrow {
-  width: 22px;
-  height: 22px;
-  background: rgba(255,255,255,0.2);
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -837,7 +902,7 @@ body {
   gap: 10px;
   padding: 14px 16px;
   border-bottom: 1px solid var(--border);
-  background: white;
+  background: var(--surface);
   position: sticky;
   top: 0;
   z-index: 40;
@@ -970,6 +1035,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: 6px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-style: normal;
 }
 
 /* Horizontal scroll row */

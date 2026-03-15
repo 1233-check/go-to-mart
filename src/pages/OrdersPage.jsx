@@ -43,11 +43,11 @@ export default function OrdersPage() {
 
   return (
     <div className="page-content">
-      <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '14px 16px', borderBottom: '1px solid #e8e8e8', background: 'white', position: 'sticky', top: 0, zIndex: 40 }}>
-        <button className="back-btn" onClick={() => navigate(-1)}>
-          <ArrowLeft size={18} color="#333" />
+      <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '14px 16px', borderBottom: '1px solid var(--border)', background: 'var(--surface)', position: 'sticky', top: 0, zIndex: 40 }}>
+        <button className="back-btn" onClick={() => navigate(-1)} style={{ background: 'transparent', border: 'none', padding: 0, display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
+          <ArrowLeft size={18} color="var(--text-primary)" />
         </button>
-        <h1 style={{ fontSize: '16px', fontWeight: 700 }}>My Orders</h1>
+        <h1 style={{ fontSize: '16px', fontWeight: 700, margin: 0, color: 'var(--text-primary)' }}>My Orders</h1>
       </div>
 
       {loading ? (

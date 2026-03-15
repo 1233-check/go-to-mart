@@ -1,9 +1,21 @@
-import { createContext, useContext, useState, useCallback } from 'react'
+import { createContext, useContext, useState, useEffect, useCallback } from 'react'
 
 const CartContext = createContext(null)
 
 export function CartProvider({ children }) {
-  const [items, setItems] = useState({}) // { productId: { product, qty } }
+  const [items, setItems] = useState(() => {
+    try {
+      const saved = localStorage.getItem('gtm_cart')
+      return saved ? JSON.parse(saved) : {}
+    } catch {
+      return {}
+    }
+  })
+
+  // Save to localStorage on change
+  useEffect(() => {
+    localStorage.setItem('gtm_cart', JSON.stringify(items))
+  }, [items])
 
   const addItem = useCallback((product) => {
     setItems(prev => {

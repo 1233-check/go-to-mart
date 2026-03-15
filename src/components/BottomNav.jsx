@@ -1,8 +1,14 @@
 import { useLocation, Link } from 'react-router-dom'
-import { Home, Search, LayoutGrid, User } from 'lucide-react'
+import { Search, LayoutGrid, User } from 'lucide-react'
+
+const CustomHomeIcon = ({ size }) => (
+  <div style={{ width: size, height: size, borderRadius: '6px', overflow: 'hidden' }}>
+    <img src="/logo-new.jpg" alt="Home" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+  </div>
+)
 
 const tabs = [
-  { id: '/', label: 'Home', icon: Home },
+  { id: '/', label: 'Home', icon: CustomHomeIcon },
   { id: '/search', label: 'Search', icon: Search },
   { id: '/categories', label: 'Categories', icon: LayoutGrid },
   { id: '/profile', label: 'Account', icon: User },
@@ -24,9 +30,8 @@ export default function BottomNav() {
     <nav className="bottom-nav">
       {tabs.map(tab => {
         const active = getActive(tab.id)
-        const to = tab.id === '/categories' ? '/' : tab.id
         return (
-          <Link key={tab.id} to={to} className={`nav-item ${active ? 'active' : ''}`}>
+          <Link key={tab.id} to={tab.id} className={`nav-item ${active ? 'active' : ''}`}>
             <tab.icon size={20} strokeWidth={active ? 2.5 : 1.8} fill={active ? 'currentColor' : 'none'} />
             <span className="nav-label">{tab.label}</span>
           </Link>

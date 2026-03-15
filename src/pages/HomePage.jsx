@@ -7,11 +7,7 @@ import { useAuth } from '../context/AuthContext'
 import { useUserLocation } from '../hooks/useLocation'
 import ProductCard from '../components/ProductCard'
 
-const CAT_COLORS = [
-  'cat-bg-green', 'cat-bg-amber', 'cat-bg-orange', 'cat-bg-blue',
-  'cat-bg-pink', 'cat-bg-red', 'cat-bg-purple', 'cat-bg-cyan',
-  'cat-bg-lime', 'cat-bg-teal', 'cat-bg-indigo', 'cat-bg-rose', 'cat-bg-yellow'
-]
+
 
 export default function HomePage() {
   const { categories, loading: catLoading } = useCategories()
@@ -31,7 +27,7 @@ export default function HomePage() {
       <header className="header">
         <div className="header-top">
           <div className="header-brand">
-            <img src="/logo.jpg" alt="Go To Mart" className="header-logo" />
+            <img src="/logo-new.jpg" alt="Go To Mart" className="header-logo" />
             <div className="header-delivery">
               <span className="header-delivery-label">Delivery in</span>
               <div className="header-delivery-time">
@@ -42,24 +38,24 @@ export default function HomePage() {
           </div>
           <div className="header-icons">
             <Link to="/profile" className="header-icon-btn">
-              <User size={16} color="#666" />
+              <User size={16} color="#fff" />
             </Link>
             <Link to="/cart" className="header-icon-btn">
-              <ShoppingCart size={16} color="#666" />
+              <ShoppingCart size={16} color="#fff" />
               {totalItems > 0 && <span className="cart-badge">{totalItems}</span>}
             </Link>
           </div>
         </div>
 
         <div className="location-row" onClick={() => { if (permissionDenied || locError) requestLocation() }} style={{ cursor: permissionDenied || locError ? 'pointer' : 'default' }}>
-          <MapPin size={11} color={locLoading ? '#999' : '#0d8320'} />
+          <MapPin size={11} color={locLoading ? 'rgba(255,255,255,0.7)' : '#10b981'} />
           <span className="location-text">{displayAddr}</span>
-          <ChevronDown size={11} color="#999" />
+          <ChevronDown size={11} color="rgba(255,255,255,0.7)" />
         </div>
 
         <div className="search-bar-wrap">
           <Link to="/search" className="search-bar" style={{ textDecoration: 'none' }}>
-            <Search size={16} />
+            <Search size={16} color="rgba(255,255,255,0.7)" />
             <span className="search-bar-text">Search for groceries, vegetables, fruits...</span>
           </Link>
         </div>
@@ -79,8 +75,15 @@ export default function HomePage() {
           <div className="category-grid">
             {categories.map((cat, i) => (
               <Link to={`/category/${cat.id}`} key={cat.id} className="category-card">
-                <div className={`category-icon ${CAT_COLORS[i % CAT_COLORS.length]}`}>
-                  {cat.icon}
+                <div 
+                  className="category-icon" 
+                  style={cat.image_url ? { overflow: 'hidden', padding: 0 } : {}}
+                >
+                  {cat.image_url ? (
+                    <img src={cat.image_url} alt={cat.name} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'inherit' }} />
+                  ) : (
+                    cat.icon
+                  )}
                 </div>
                 <span className="category-name">{cat.name}</span>
               </Link>

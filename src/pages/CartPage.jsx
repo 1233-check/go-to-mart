@@ -18,10 +18,36 @@ export default function CartPage() {
   const [newAddrLabel, setNewAddrLabel] = useState('Home')
   const [payment, setPayment] = useState('cod')
   const [placing, setPlacing] = useState(false)
+  
+  // New Fee & Tip State
+  const [deliveryDistance, setDeliveryDistance] = useState(2.5)
+  const [tip, setTip] = useState(0)
 
-  const deliveryFee = totalPrice >= 500 ? 0 : 25
+  // Fake Distance Calculator based on address to simulate Maps API
+  useEffect(() => {
+    if (address.length > 5) {
+      const dist = ((address.length * 0.35) % 8 + 1.2).toFixed(1)
+      setDeliveryDistance(Number(dist))
+    }
+  }, [address])
+
+  // Fee Calculations
   const savings = totalMrp - totalPrice
-  const grandTotal = totalPrice + deliveryFee
+  const platformFee = totalItems > 0 ? 15 : 0 // Flat 15 Rs
+  const gstAmount = totalPrice * 0.05 // 5% Flat GST
+
+  // Delivery Fee: 30 Rs upto 3km, +5 Rs per km after
+  let deliveryFee = 0
+  if (totalItems > 0) {
+    if (deliveryDistance <= 3) {
+      deliveryFee = 30
+    } else {
+      const extraKm = Math.ceil(deliveryDistance - 3)
+      deliveryFee = 30 + (extraKm * 5)
+    }
+  }
+
+  const grandTotal = totalPrice + deliveryFee + platformFee + gstAmount + tip
 
   // Pre-fill name/phone from profile
   useEffect(() => {
@@ -90,6 +116,10 @@ export default function CartPage() {
         delivery_fee: deliveryFee,
         discount: savings > 0 ? savings : 0,
         total: grandTotal,
+        platform_fee: platformFee,
+        gst_amount: gstAmount,
+        rider_tip: tip,
+        delivery_distance_km: deliveryDistance,
         payment_method: payment,
         payment_status: 'pending',
         customer_name: name.trim(),
@@ -180,27 +210,53 @@ export default function CartPage() {
           <h3>Bill Details</h3>
           <div className="bill-row">
             <span>Item Total</span>
-            <span>₹{totalPrice.toFixed(0)}</span>
+            <span>₹{totalPrice.toFixed(2)}</span>
           </div>
           {savings > 0 && (
             <div className="bill-row saving">
               <span>Savings</span>
-              <span>-₹{savings.toFixed(0)}</span>
+              <span>-₹{savings.toFixed(2)}</span>
             </div>
           )}
           <div className="bill-row">
-            <span>Delivery Fee</span>
-            <span>{deliveryFee === 0 ? 'FREE' : `₹${deliveryFee}`}</span>
+            <span>Delivery Fee ({deliveryDistance} km)</span>
+            <span>₹{deliveryFee.toFixed(2)}</span>
           </div>
+          <div className="bill-row">
+            <span>Platform Fee</span>
+            <span>₹{platformFee.toFixed(2)}</span>
+          </div>
+          <div className="bill-row">
+            <span>GST Amount (5%)</span>
+            <span>₹{gstAmount.toFixed(2)}</span>
+          </div>
+          {tip > 0 && (
+            <div className="bill-row">
+              <span>Delivery Partner Tip</span>
+              <span>₹{tip.toFixed(2)}</span>
+            </div>
+          )}
           <div className="bill-row total">
             <span>Grand Total</span>
-            <span>₹{grandTotal.toFixed(0)}</span>
+            <span>₹{grandTotal.toFixed(2)}</span>
           </div>
-          {totalPrice < 500 && (
-            <p style={{ fontSize: '11px', color: '#0d8320', marginTop: '8px', fontWeight: 600 }}>
-              Add ₹{(500 - totalPrice).toFixed(0)} more for free delivery
-            </p>
-          )}
+        </div>
+
+        {/* Tip Section */}
+        <div className="checkout-section tip-section">
+          <h3>Tip your Delivery Partner</h3>
+          <p className="tip-subtitle">100% of the tip goes directly to the rider helping you.</p>
+          <div className="tip-options">
+            {[10, 20, 30, 50].map(amt => (
+              <button
+                key={amt}
+                className={`tip-btn ${tip === amt ? 'active' : ''}`}
+                onClick={() => setTip(tip === amt ? 0 : amt)}
+              >
+                ₹{amt}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Delivery Details */}
@@ -272,10 +328,6 @@ export default function CartPage() {
           <div className="payment-options">
             <button className={`payment-option ${payment === 'cod' ? 'active' : ''}`} onClick={() => setPayment('cod')}>
               💵 Cash on Delivery
-            </button>
-            <button className="payment-option disabled" disabled>
-              💳 Pay Online
-              <span className="coming-soon-tag">Coming Soon</span>
             </button>
           </div>
         </div>
