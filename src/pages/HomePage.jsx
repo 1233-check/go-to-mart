@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Search, MapPin, ChevronDown, ShoppingCart, User, Zap, ChevronRight } from 'lucide-react'
-import { useCategories, useProducts } from '../hooks/useSupabase'
+import { Search, MapPin, ChevronDown, ShoppingCart, User, Zap, ChevronRight, ChevronUp } from 'lucide-react'
+import { useCategories, useProducts, useSuperCategories } from '../hooks/useSupabase'
 import { useCart } from '../context/CartContext'
 import { useAuth } from '../context/AuthContext'
 import { useUserLocation } from '../hooks/useLocation'
@@ -11,6 +11,7 @@ import ProductCard from '../components/ProductCard'
 
 export default function HomePage() {
   const { categories, loading: catLoading } = useCategories()
+  const { sections, loading: superLoading } = useSuperCategories()
   const { products, loading: prodLoading } = useProducts()
   const { totalItems } = useCart()
   const { user } = useAuth()
@@ -27,7 +28,7 @@ export default function HomePage() {
       <header className="header">
         <div className="header-top">
           <div className="header-brand">
-            <img src="/logo-new.jpg" alt="Go To Mart" className="header-logo" />
+            <img src="/logo-4k.png" alt="Go To Mart" className="header-logo" />
             <div className="header-delivery">
               <span className="header-delivery-label">Delivery in</span>
               <div className="header-delivery-time">
@@ -66,29 +67,34 @@ export default function HomePage() {
         <p><Zap size={12} fill="gold" color="gold" /> Fast, Fresh, Everyday Essentials <Zap size={12} fill="gold" color="gold" /></p>
       </div>
 
-      {/* Categories Grid */}
-      {catLoading ? (
+      {/* Super-Category Sections */}
+      {superLoading ? (
         <div className="loader"><div className="spinner" /></div>
       ) : (
-        <div className="category-strip">
-          <div className="category-strip-title">Shop by Category</div>
-          <div className="category-grid">
-            {categories.map((cat, i) => (
-              <Link to={`/category/${cat.id}`} key={cat.id} className="category-card">
-                <div 
-                  className="category-icon" 
-                  style={cat.image_url ? { overflow: 'hidden', padding: 0 } : {}}
-                >
-                  {cat.image_url ? (
-                    <img src={cat.image_url} alt={cat.name} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'inherit' }} />
-                  ) : (
-                    cat.icon
-                  )}
-                </div>
-                <span className="category-name">{cat.name}</span>
-              </Link>
-            ))}
-          </div>
+        <div className="super-category-list">
+          {sections.map((section) => (
+            <div key={section.id} className="super-category-section">
+              <div className="super-category-header">
+                <span className="super-category-name">
+                  {section.icon} {section.name}
+                </span>
+              </div>
+              <div className="sub-category-grid">
+                {section.categories.map((cat) => (
+                  <Link to={`/category/${cat.id}`} key={cat.id} className="sub-category-card" style={{ textDecoration: 'none' }}>
+                    <div className="sub-category-img-wrap">
+                      {cat.image_url ? (
+                        <img src={cat.image_url} alt={cat.name} className="sub-category-img" />
+                      ) : (
+                        <span className="sub-category-emoji">{cat.icon}</span>
+                      )}
+                    </div>
+                    <span className="sub-category-name">{cat.name}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       )}
 

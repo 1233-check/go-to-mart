@@ -14,6 +14,7 @@ import OrdersPage from './pages/OrdersPage'
 import OrderSuccessPage from './pages/OrderSuccessPage'
 import LoginPage from './pages/LoginPage'
 import SplashScreen from './pages/SplashScreen'
+import SupportPage from './pages/SupportPage'
 
 // Admin App Pages
 import AdminLayout from './pages/admin/AdminLayout'
@@ -21,6 +22,9 @@ import AdminDashboard from './pages/admin/AdminDashboard'
 import AdminOrders from './pages/admin/AdminOrders'
 import AdminProducts from './pages/admin/AdminProducts'
 import AdminUsers from './pages/admin/AdminUsers'
+import AdminRiders from './pages/admin/AdminRiders'
+import AdminCategories from './pages/admin/AdminCategories'
+import AdminSupport from './pages/admin/AdminSupport'
 
 // Store App Pages
 import StoreLayout from './pages/store/StoreLayout'
@@ -41,6 +45,26 @@ function ProtectedRoute({ children }) {
   const location = useLocation()
   if (loading) return <div className="loader"><div className="spinner" /></div>
   if (!isAuthenticated) return <Navigate to="/login" state={{ from: location.pathname }} replace />
+  return children
+}
+
+function RoleProtectedRoute({ children, allowedRoles }) {
+  const { isAuthenticated, profile, loading } = useAuth()
+  const location = useLocation()
+  
+  // DEV BYPASS: Remove this before deploying to production if you don't want local full access
+  if (import.meta.env.DEV) {
+    return children
+  }
+  
+  if (loading) return <div className="loader"><div className="spinner" /></div>
+  if (!isAuthenticated) return <Navigate to="/login" state={{ from: location.pathname }} replace />
+  
+  if (!profile || !allowedRoles.includes(profile.role)) {
+    // Redirect unauthorized users to the home page or a 403 page
+    return <Navigate to="/" replace />
+  }
+  
   return children
 }
 
@@ -82,23 +106,27 @@ function AppRoutes() {
         <Route path="/profile" element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
         <Route path="/orders" element={<ProtectedRoute><OrdersPage /></ProtectedRoute>} />
         <Route path="/order-success" element={<ProtectedRoute><OrderSuccessPage /></ProtectedRoute>} />
+        <Route path="/support" element={<ProtectedRoute><SupportPage /></ProtectedRoute>} />
 
         {/* Admin routes (Protected inside AdminLayout) */}
-        <Route path="/admin" element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
+        <Route path="/admin" element={<RoleProtectedRoute allowedRoles={['admin']}><AdminLayout /></RoleProtectedRoute>}>
           <Route index element={<AdminDashboard />} />
           <Route path="orders" element={<AdminOrders />} />
           <Route path="products" element={<AdminProducts />} />
+          <Route path="categories" element={<AdminCategories />} />
+          <Route path="riders" element={<AdminRiders />} />
           <Route path="users" element={<AdminUsers />} />
+          <Route path="support" element={<AdminSupport />} />
         </Route>
 
         {/* Store routes (Protected inside StoreLayout) */}
-        <Route path="/store" element={<ProtectedRoute><StoreLayout /></ProtectedRoute>}>
+        <Route path="/store" element={<RoleProtectedRoute allowedRoles={['store_staff', 'admin']}><StoreLayout /></RoleProtectedRoute>}>
           <Route index element={<StoreOrders />} />
           <Route path="inventory" element={<StoreInventory />} />
         </Route>
 
         {/* Delivery routes (Protected inside DeliveryLayout) */}
-        <Route path="/delivery" element={<ProtectedRoute><DeliveryLayout /></ProtectedRoute>}>
+        <Route path="/delivery" element={<RoleProtectedRoute allowedRoles={['delivery_partner', 'admin']}><DeliveryLayout /></RoleProtectedRoute>}>
           <Route index element={<DeliveryOrders />} />
           <Route path="history" element={<DeliveryHistory />} />
         </Route>

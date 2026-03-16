@@ -25,7 +25,7 @@ export default function SearchPage() {
     <div className="page-content">
       <div className="search-page-header">
         <button className="back-btn" onClick={() => navigate(-1)}>
-          <ArrowLeft size={18} color="#333" />
+          <ArrowLeft size={18} color="var(--text-primary)" />
         </button>
         <div className="search-page-input-wrap">
           <Search size={16} />

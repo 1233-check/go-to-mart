@@ -57,7 +57,7 @@ export default function LoginPage() {
         <div className="login-page">
           <div className="login-header">
             <button className="back-btn" onClick={() => navigate(-1)}>
-              <ArrowLeft size={18} color="#333" />
+              <ArrowLeft size={18} color="var(--text-primary)" />
             </button>
           </div>
           <div className="login-brand">

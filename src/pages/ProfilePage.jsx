@@ -104,12 +104,12 @@ export default function ProfilePage() {
             </div>
             <span style={{ fontSize: '11px', fontWeight: '700', color: 'var(--text-primary)', textAlign: 'center' }}>Wallet Money</span>
           </div>
-          <div style={{ background: 'var(--surface)', borderRadius: '12px', padding: '16px 8px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', boxShadow: 'var(--shadow-sm)' }}>
+          <Link to="/support" style={{ textDecoration: 'none', background: 'var(--surface)', borderRadius: '12px', padding: '16px 8px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', boxShadow: 'var(--shadow-sm)' }}>
             <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#fff1f2', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <HelpCircle size={20} color="#e11d48" />
             </div>
             <span style={{ fontSize: '11px', fontWeight: '700', color: 'var(--text-primary)', textAlign: 'center' }}>Need help?</span>
-          </div>
+          </Link>
         </div>
 
         {/* Secure Admin/Staff Sections (Only visible if roles match) */}

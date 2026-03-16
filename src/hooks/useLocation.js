@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback } from 'react'
 
-// Fixed store location (can be configured)
-const STORE_LAT = 28.6139   // Example: New Delhi
-const STORE_LNG = 77.2090
+// Fixed dark store location (permanent)
+const STORE_LAT = 25.888851165771484
+const STORE_LNG = 93.77086639404297
 
 // Haversine formula for distance in km
 function haversineDistance(lat1, lon1, lat2, lon2) {

@@ -157,7 +157,7 @@ export default function CartPage() {
         <div className="cart-page">
           <div className="cart-header">
             <button className="back-btn" onClick={() => navigate(-1)}>
-              <ArrowLeft size={18} color="#333" />
+              <ArrowLeft size={18} color="var(--text-primary)" />
             </button>
             <h1>My Cart</h1>
           </div>

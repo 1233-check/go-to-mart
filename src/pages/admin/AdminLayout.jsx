@@ -1,7 +1,7 @@
 import { Navigate, Outlet, useLocation, Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useAuth } from '../../context/AuthContext'
-import { LayoutDashboard, ShoppingBag, Package, Users, LogOut, Menu, X } from 'lucide-react'
+import { LayoutDashboard, ShoppingBag, Package, Users, LogOut, Menu, X, Bike, FolderOpen, MessageSquare } from 'lucide-react'
 import '../../admin.css'
 
 export default function AdminLayout() {
@@ -11,10 +11,14 @@ export default function AdminLayout() {
 
   if (loading) return <div className="loader"><div className="spinner" /></div>
 
-  // Restrict to admins
-  if (!user || !profile || profile.role !== 'admin') {
+  // Restrict to admins (bypassed in local dev)
+  if (!import.meta.env.DEV && (!user || !profile || profile.role !== 'admin')) {
     return <Navigate to="/" replace />
   }
+
+  const activeProfile = import.meta.env.DEV && (!profile || profile.role !== 'admin') 
+    ? { full_name: 'Dev Admin', role: 'admin' } 
+    : profile;
 
   const handleLogout = async () => {
     await signOut()
@@ -27,7 +31,10 @@ export default function AdminLayout() {
     { path: '/admin', label: 'Dashboard', icon: LayoutDashboard },
     { path: '/admin/orders', label: 'Orders', icon: ShoppingBag },
     { path: '/admin/products', label: 'Products', icon: Package },
+    { path: '/admin/categories', label: 'Categories', icon: FolderOpen },
+    { path: '/admin/riders', label: 'Riders', icon: Bike },
     { path: '/admin/users', label: 'Users', icon: Users },
+    { path: '/admin/support', label: 'Support', icon: MessageSquare },
   ]
 
   return (
@@ -90,7 +97,7 @@ export default function AdminLayout() {
               <Menu size={24} />
             </button>
             <div style={{ fontSize: '14px', color: '#94a3b8' }}>
-              Welcome back, <span style={{ color: 'white', fontWeight: 600 }}>{profile.full_name || 'Admin'}</span>
+              Welcome back, <span style={{ color: 'white', fontWeight: 600 }}>{activeProfile?.full_name || 'Admin'}</span>
             </div>
           </div>
           <Link to="/" style={{ color: '#10b981', textDecoration: 'none', fontSize: '14px', fontWeight: 500 }}>

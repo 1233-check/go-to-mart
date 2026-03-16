@@ -14,7 +14,7 @@ export default function CategoryPage() {
     <div className="page-content">
       <div className="category-page-header">
         <button className="back-btn" onClick={() => navigate(-1)}>
-          <ArrowLeft size={18} color="#333" />
+          <ArrowLeft size={18} color="var(--text-primary)" />
         </button>
         <div>
           <h1>{category?.icon} {category?.name || 'Category'}</h1>

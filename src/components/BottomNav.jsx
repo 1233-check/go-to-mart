@@ -2,8 +2,8 @@ import { useLocation, Link } from 'react-router-dom'
 import { Search, LayoutGrid, User } from 'lucide-react'
 
 const CustomHomeIcon = ({ size }) => (
-  <div style={{ width: size, height: size, borderRadius: '6px', overflow: 'hidden' }}>
-    <img src="/logo-new.jpg" alt="Home" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+  <div style={{ width: size + 4, height: size + 4, borderRadius: '6px', overflow: 'hidden' }}>
+    <img src="/logo-4k.png" alt="Home" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
   </div>
 )
 

@@ -89,3 +89,26 @@ export function useProductsByCategory() {
 
   return { grouped, loading }
 }
+
+export function useSuperCategories() {
+  const [sections, setSections] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    Promise.all([
+      supabase.from('super_categories').select('*').eq('is_active', true).order('sort_order'),
+      supabase.from('categories').select('*').eq('is_active', true).order('sort_order')
+    ]).then(([superRes, catRes]) => {
+      const supers = superRes.data || []
+      const cats = catRes.data || []
+      const grouped = supers.map(sc => ({
+        ...sc,
+        categories: cats.filter(c => c.super_category_id === sc.id)
+      })).filter(sc => sc.categories.length > 0)
+      setSections(grouped)
+      setLoading(false)
+    })
+  }, [])
+
+  return { sections, loading }
+}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../../lib/supabase'
-import { Search, Plus, Edit2, Archive, ArchiveRestore } from 'lucide-react'
+import { Search, Plus, Edit2, Archive, ArchiveRestore, Upload, AlertTriangle } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
 
 export default function AdminProducts() {
@@ -10,8 +10,9 @@ export default function AdminProducts() {
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState('')
   const [filterCat, setFilterCat] = useState('all')
-  const [isEditing, setIsEditing] = useState(null) // null or product ID or 'new'
+  const [isEditing, setIsEditing] = useState(null)
   const [editForm, setEditForm] = useState({})
+  const [uploading, setUploading] = useState(false)
 
   const fetchData = async () => {
     try {
@@ -50,6 +51,27 @@ export default function AdminProducts() {
       console.error(err)
       alert("Failed to update status")
     }
+  }
+
+  const handleImageUpload = async (file) => {
+    if (!file) return
+    setUploading(true)
+    const ext = file.name.split('.').pop()
+    const filePath = `product-${Date.now()}.${ext}`
+
+    const { error: uploadErr } = await supabase.storage
+      .from('products')
+      .upload(filePath, file, { cacheControl: '3600', upsert: true })
+
+    if (uploadErr) {
+      alert('Upload failed: ' + uploadErr.message)
+      setUploading(false)
+      return
+    }
+
+    const { data: urlData } = supabase.storage.from('products').getPublicUrl(filePath)
+    setEditForm({ ...editForm, image_url: urlData.publicUrl })
+    setUploading(false)
   }
 
   const handleSave = async (e) => {
@@ -106,6 +128,8 @@ export default function AdminProducts() {
     (search === '' || p.name.toLowerCase().includes(search.toLowerCase()))
   )
 
+  const lowStockCount = products.filter(p => p.stock_quantity < 20 && p.is_active).length
+
   if (loading) return <div className="loader"><div className="spinner" /></div>
 
   if (isEditing) {
@@ -119,20 +143,21 @@ export default function AdminProducts() {
             <label style={{ display: 'block', marginBottom: '8px', color: '#94a3b8', fontSize: '13px' }}>Product Name *</label>
             <input required type="text" value={editForm.name} onChange={e => setEditForm({...editForm, name: e.target.value})} style={{ width: '100%', padding: '10px 14px', background: '#0f172a', border: '1px solid #334155', borderRadius: '8px', color: 'white', outline: 'none' }} />
           </div>
+
+          <div>
+            <label style={{ display: 'block', marginBottom: '8px', color: '#94a3b8', fontSize: '13px' }}>Description</label>
+            <textarea value={editForm.description} onChange={e => setEditForm({...editForm, description: e.target.value})} rows={3} placeholder="Product description..." style={{ width: '100%', padding: '10px 14px', background: '#0f172a', border: '1px solid #334155', borderRadius: '8px', color: 'white', outline: 'none', resize: 'vertical', fontFamily: 'inherit' }} />
+          </div>
           
           <div style={{ display: 'flex', gap: '16px' }}>
             <div style={{ flex: 1 }}>
               <label style={{ display: 'block', marginBottom: '8px', color: '#94a3b8', fontSize: '13px' }}>Selling Price (₹) *</label>
               <input required type="number" step="0.01" value={editForm.price} onChange={e => setEditForm({...editForm, price: e.target.value})} style={{ width: '100%', padding: '10px 14px', background: '#0f172a', border: '1px solid #334155', borderRadius: '8px', color: 'white', outline: 'none' }} />
             </div>
-            
-            {role === 'admin' && (
-              <div style={{ flex: 1 }}>
-                <label style={{ display: 'block', marginBottom: '8px', color: '#94a3b8', fontSize: '13px' }}>MRP (₹)</label>
-                <input type="number" step="0.01" value={editForm.mrp} onChange={e => setEditForm({...editForm, mrp: e.target.value})} style={{ width: '100%', padding: '10px 14px', background: '#0f172a', border: '1px solid #334155', borderRadius: '8px', color: 'white', outline: 'none' }} />
-              </div>
-            )}
-            
+            <div style={{ flex: 1 }}>
+              <label style={{ display: 'block', marginBottom: '8px', color: '#94a3b8', fontSize: '13px' }}>MRP (₹)</label>
+              <input type="number" step="0.01" value={editForm.mrp} onChange={e => setEditForm({...editForm, mrp: e.target.value})} style={{ width: '100%', padding: '10px 14px', background: '#0f172a', border: '1px solid #334155', borderRadius: '8px', color: 'white', outline: 'none' }} />
+            </div>
             <div style={{ flex: 1 }}>
               <label style={{ display: 'block', marginBottom: '8px', color: '#94a3b8', fontSize: '13px' }}>Unit</label>
               <input type="text" value={editForm.unit} onChange={e => setEditForm({...editForm, unit: e.target.value})} placeholder="e.g. 1 kg, 500g" style={{ width: '100%', padding: '10px 14px', background: '#0f172a', border: '1px solid #334155', borderRadius: '8px', color: 'white', outline: 'none' }} />
@@ -152,9 +177,33 @@ export default function AdminProducts() {
             </div>
           </div>
 
+          {/* Image Upload Section */}
           <div>
-            <label style={{ display: 'block', marginBottom: '8px', color: '#94a3b8', fontSize: '13px' }}>Image URL</label>
-            <input type="url" value={editForm.image_url} onChange={e => setEditForm({...editForm, image_url: e.target.value})} placeholder="https://..." style={{ width: '100%', padding: '10px 14px', background: '#0f172a', border: '1px solid #334155', borderRadius: '8px', color: 'white', outline: 'none' }} />
+            <label style={{ display: 'block', marginBottom: '8px', color: '#94a3b8', fontSize: '13px' }}>Product Image</label>
+            <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+              {editForm.image_url && (
+                <img src={editForm.image_url} alt="Preview" style={{ width: '80px', height: '80px', borderRadius: '8px', objectFit: 'cover', border: '1px solid #334155' }} />
+              )}
+              <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <label style={{
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
+                  padding: '12px', border: '2px dashed #334155', borderRadius: '8px',
+                  cursor: 'pointer', color: '#94a3b8', fontSize: '14px',
+                  transition: 'border-color 0.2s',
+                }}>
+                  <Upload size={18} />
+                  {uploading ? 'Uploading...' : 'Upload from PC'}
+                  <input
+                    type="file"
+                    accept="image/*"
+                    style={{ display: 'none' }}
+                    onChange={(e) => handleImageUpload(e.target.files[0])}
+                    disabled={uploading}
+                  />
+                </label>
+                <input type="url" value={editForm.image_url} onChange={e => setEditForm({...editForm, image_url: e.target.value})} placeholder="Or paste image URL..." style={{ width: '100%', padding: '8px 12px', background: '#0f172a', border: '1px solid #334155', borderRadius: '6px', color: 'white', outline: 'none', fontSize: '13px' }} />
+              </div>
+            </div>
           </div>
 
           <div>
