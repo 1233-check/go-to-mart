@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Prevent indexing of protected routes
+Disallow: /admin/*
+Disallow: /store/*
+Disallow: /delivery/*
+Disallow: /profile
+Disallow: /login
+Disallow: /cart
+
+Sitemap: https://gotomart.live/sitemap.xml
