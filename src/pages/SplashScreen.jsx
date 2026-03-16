@@ -5,13 +5,13 @@ export default function SplashScreen({ onComplete }) {
   const [phase, setPhase] = useState(1);
 
   useEffect(() => {
-    // Transition to Phase 2 after 1.5 seconds
-    const timer1 = setTimeout(() => setPhase(2), 1500);
+    // Transition to Phase 2 after 2.5 seconds
+    const timer1 = setTimeout(() => setPhase(2), 2500);
 
-    // Call onComplete after Phase 2 completes (1.5s delay + 1.5s hold = 3.0s total)
+    // Call onComplete after Phase 2 completes (2.5s delay + 1.5s hold = 4.0s total)
     const timer2 = setTimeout(() => {
       if (onComplete) onComplete();
-    }, 3000);
+    }, 4000);
 
     return () => {
       clearTimeout(timer1);
@@ -36,7 +36,7 @@ export default function SplashScreen({ onComplete }) {
               style={{ top: '55%', left: 0, transformOrigin: 'left' }}
               initial={{ width: '0vw' }}
               animate={{ width: '100vw' }}
-              transition={{ duration: 1.5, ease: 'easeInOut' }}
+              transition={{ duration: 2.5, ease: 'easeInOut' }}
             />
             {/* 3D Scooter/Rider Image */}
             <motion.div
@@ -44,7 +44,7 @@ export default function SplashScreen({ onComplete }) {
               style={{ top: '50%', y: '-50%' }}
               initial={{ left: '-30vw' }}
               animate={{ left: '130vw' }}
-              transition={{ duration: 1.5, ease: 'easeInOut' }}
+              transition={{ duration: 2.5, ease: 'easeInOut' }}
             >
               <div className="absolute inset-0 z-0 flex items-center justify-center opacity-80" style={{ transform: 'translateX(-20%)' }}>
                 <svg width="100%" height="60%" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
