@@ -106,7 +106,11 @@ export default function CartPage() {
     }
     setPlacing(true)
     try {
-      const orderNumber = 'GTM-' + Date.now().toString(36).toUpperCase()
+      // Generate sequential order number via DB sequence
+      const { data: seqData } = await supabase.rpc('nextval_order_number')
+      const seqNum = seqData || Date.now()
+      const orderNumber = 'GTM-' + String(seqNum).padStart(4, '0')
+
       const { data: order, error } = await supabase.from('orders').insert({
         order_number: orderNumber,
         customer_id: user.id,
@@ -121,7 +125,7 @@ export default function CartPage() {
         rider_tip: tip,
         delivery_distance_km: deliveryDistance,
         payment_method: payment,
-        payment_status: 'pending',
+        payment_status: payment === 'cod' ? 'pending' : 'pending',
         customer_name: name.trim(),
         customer_phone: phone.trim(),
         estimated_delivery: '30-45 mins',
@@ -129,6 +133,7 @@ export default function CartPage() {
 
       if (error) throw error
 
+      // Insert order items
       const items = cartItems.map(({ product, qty }) => ({
         order_id: order.id,
         product_id: product.id,
@@ -138,8 +143,20 @@ export default function CartPage() {
         quantity: qty,
         total: Number(product.price) * qty,
       }))
-
       await supabase.from('order_items').insert(items)
+
+      // Log status change
+      await supabase.from('order_status_log').insert({
+        order_id: order.id,
+        status: 'placed',
+        changed_by: user.id,
+        note: 'Order placed by customer'
+      })
+
+      // Deduct stock quantities
+      for (const { product, qty } of cartItems) {
+        await supabase.rpc('decrement_stock', { p_product_id: product.id, p_qty: qty })
+      }
 
       clearCart()
       navigate('/order-success', { state: { orderNumber, total: grandTotal } })
