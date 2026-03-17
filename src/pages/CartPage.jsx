@@ -259,21 +259,45 @@ export default function CartPage() {
           </div>
         </div>
 
-        {/* Tip Section */}
+        {/* Tip Section — Redesigned */}
         <div className="checkout-section tip-section">
-          <h3>Tip your Delivery Partner</h3>
-          <p className="tip-subtitle">100% of the tip goes directly to the rider helping you.</p>
-          <div className="tip-options">
-            {[10, 20, 30, 50].map(amt => (
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+            <span style={{ fontSize: '18px' }}>🤝</span>
+            <h3 style={{ margin: 0 }}>Tip your Delivery Partner</h3>
+          </div>
+          <p className="tip-subtitle" style={{ margin: '0 0 12px 0', fontSize: '12px', color: 'var(--text-muted)' }}>100% of the tip goes directly to the rider helping you</p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px' }}>
+            {[
+              { amt: 10, emoji: '😊', label: 'Kind' },
+              { amt: 20, emoji: '🙏', label: 'Grateful' },
+              { amt: 30, emoji: '⭐', label: 'Great' },
+              { amt: 50, emoji: '🎉', label: 'Amazing' },
+            ].map(({ amt, emoji, label }) => (
               <button
                 key={amt}
-                className={`tip-btn ${tip === amt ? 'active' : ''}`}
                 onClick={() => setTip(tip === amt ? 0 : amt)}
+                style={{
+                  display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px',
+                  padding: '10px 4px', borderRadius: '12px', border: 'none', cursor: 'pointer',
+                  background: tip === amt ? 'var(--brand)' : 'var(--surface)',
+                  color: tip === amt ? '#fff' : 'var(--text-primary)',
+                  boxShadow: tip === amt ? '0 2px 8px rgba(22,163,74,0.3)' : '0 1px 3px rgba(0,0,0,0.06)',
+                  outline: tip === amt ? 'none' : '1px solid var(--border)',
+                  transition: 'all 0.2s ease',
+                  transform: tip === amt ? 'scale(1.05)' : 'scale(1)',
+                }}
               >
-                ₹{amt}
+                <span style={{ fontSize: '20px' }}>{emoji}</span>
+                <span style={{ fontSize: '14px', fontWeight: 700 }}>₹{amt}</span>
+                <span style={{ fontSize: '9px', opacity: 0.7, fontWeight: 500 }}>{label}</span>
               </button>
             ))}
           </div>
+          {tip > 0 && (
+            <div style={{ marginTop: '8px', textAlign: 'center', fontSize: '12px', color: 'var(--brand)', fontWeight: 600 }}>
+              ✨ You're adding ₹{tip} tip — Thank you!
+            </div>
+          )}
         </div>
 
         {/* Delivery Details */}
@@ -292,18 +316,42 @@ export default function CartPage() {
           {savedAddresses.length > 0 && !showNewAddr && (
             <div className="form-group">
               <label className="form-label">Delivery Address *</label>
-              <div className="saved-addr-list">
-                {savedAddresses.map(addr => (
-                  <button
-                    key={addr.id}
-                    className={`saved-addr-item ${selectedAddrId === addr.id ? 'active' : ''}`}
-                    onClick={() => handleSelectAddress(addr.id)}
-                  >
-                    <span className="saved-addr-label">{addr.label}</span>
-                    <span className="saved-addr-text">{addr.full_address}</span>
-                  </button>
-                ))}
-                <button className="saved-addr-add" onClick={() => setShowNewAddr(true)}>+ Add New Address</button>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                {savedAddresses.map(addr => {
+                  const isSelected = selectedAddrId === addr.id
+                  const icon = addr.label === 'Home' ? '🏠' : addr.label === 'Work' ? '🏢' : '📍'
+                  return (
+                    <button
+                      key={addr.id}
+                      onClick={() => handleSelectAddress(addr.id)}
+                      style={{
+                        display: 'flex', alignItems: 'center', gap: '10px',
+                        padding: '12px', borderRadius: '10px', border: 'none', cursor: 'pointer', textAlign: 'left', width: '100%',
+                        background: isSelected ? 'rgba(22,163,74,0.08)' : 'var(--surface)',
+                        outline: isSelected ? '2px solid var(--brand)' : '1px solid var(--border)',
+                        transition: 'all 0.15s ease',
+                      }}
+                    >
+                      <span style={{ fontSize: '20px', flexShrink: 0 }}>{icon}</span>
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '2px' }}>{addr.label}</div>
+                        <div style={{ fontSize: '12px', color: 'var(--text-muted)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{addr.full_address}</div>
+                      </div>
+                      {isSelected && <span style={{ color: 'var(--brand)', fontSize: '18px', flexShrink: 0 }}>✓</span>}
+                    </button>
+                  )
+                })}
+                <button 
+                  onClick={() => setShowNewAddr(true)}
+                  style={{
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px',
+                    padding: '10px', borderRadius: '10px', border: 'none', cursor: 'pointer',
+                    background: 'transparent', outline: '1px dashed var(--border)',
+                    color: 'var(--brand)', fontSize: '13px', fontWeight: 600,
+                  }}
+                >
+                  ＋ Add New Address
+                </button>
               </div>
             </div>
           )}
@@ -313,13 +361,23 @@ export default function CartPage() {
             <div className="form-group">
               <label className="form-label">Delivery Address *</label>
               <div style={{ display: 'flex', gap: '8px', marginBottom: '8px' }}>
-                {['Home', 'Work', 'Other'].map(label => (
+                {[
+                  { label: 'Home', icon: '🏠' },
+                  { label: 'Work', icon: '🏢' },
+                  { label: 'Other', icon: '📍' },
+                ].map(({ label, icon }) => (
                   <button
                     key={label}
-                    className={`addr-label-btn ${newAddrLabel === label ? 'active' : ''}`}
                     onClick={() => setNewAddrLabel(label)}
+                    style={{
+                      display: 'flex', alignItems: 'center', gap: '4px',
+                      padding: '6px 12px', borderRadius: '20px', border: 'none', cursor: 'pointer', fontSize: '12px', fontWeight: 600,
+                      background: newAddrLabel === label ? 'var(--brand)' : 'var(--surface)',
+                      color: newAddrLabel === label ? '#fff' : 'var(--text-secondary)',
+                      outline: newAddrLabel === label ? 'none' : '1px solid var(--border)',
+                    }}
                   >
-                    {label}
+                    {icon} {label}
                   </button>
                 ))}
               </div>
@@ -329,12 +387,29 @@ export default function CartPage() {
                 value={address}
                 onChange={e => setAddress(e.target.value)}
               />
-              {savedAddresses.length > 0 && (
-                <div style={{ display: 'flex', gap: '8px', marginTop: '8px' }}>
-                  <button className="addr-save-btn" onClick={handleSaveNewAddress}>Save Address</button>
-                  <button className="addr-cancel-btn" onClick={() => { setShowNewAddr(false); handleSelectAddress(selectedAddrId) }}>Cancel</button>
-                </div>
-              )}
+              <div style={{ display: 'flex', gap: '8px', marginTop: '8px' }}>
+                <button 
+                  onClick={handleSaveNewAddress}
+                  style={{
+                    flex: 1, padding: '10px', borderRadius: '8px', border: 'none', cursor: 'pointer',
+                    background: 'var(--brand)', color: '#fff', fontSize: '13px', fontWeight: 600,
+                  }}
+                >
+                  💾 Save Address
+                </button>
+                {savedAddresses.length > 0 && (
+                  <button 
+                    onClick={() => { setShowNewAddr(false); handleSelectAddress(selectedAddrId) }}
+                    style={{
+                      padding: '10px 16px', borderRadius: '8px', border: 'none', cursor: 'pointer',
+                      background: 'var(--surface)', color: 'var(--text-secondary)', fontSize: '13px', fontWeight: 600,
+                      outline: '1px solid var(--border)',
+                    }}
+                  >
+                    Cancel
+                  </button>
+                )}
+              </div>
             </div>
           )}
         </div>
