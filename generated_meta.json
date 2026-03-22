@@ -1,0 +1,1922 @@
+[
+  {
+    "id": "5 Star",
+    "desc": "Premium quality 5 Star, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "5",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Alpenliebe",
+    "desc": "Premium quality Alpenliebe, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Alpenliebe",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Amul Taaza (Big)",
+    "desc": "Rich and creamy Amul Taaza (Big), perfect for all your cooking and snacking needs.",
+    "high": {
+      "Brand": "Amul",
+      "Type": "Dairy",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Amul Taaza (Small)",
+    "desc": "Rich and creamy Amul Taaza (Small), perfect for all your cooking and snacking needs.",
+    "high": {
+      "Brand": "Amul",
+      "Type": "Dairy",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Apple",
+    "desc": "Farm-fresh Apple, handpicked to ensure maximum quality and daily nutrition.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Fruit",
+      "Packaging": "Loose/Box",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Ariel",
+    "desc": "Tough on stains, Ariel leaves your clothes fresh and brilliantly clean.",
+    "high": {
+      "Brand": "Ariel",
+      "Type": "Household Cleaning",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Atta (1kg)",
+    "desc": "High-quality, unadulterated Atta (1kg) for wholesome and nutritious family meals.",
+    "high": {
+      "Brand": "Atta",
+      "Type": "Staples & Grains",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Atta (2kg)",
+    "desc": "High-quality, unadulterated Atta (2kg) for wholesome and nutritious family meals.",
+    "high": {
+      "Brand": "Atta",
+      "Type": "Staples & Grains",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Avocado",
+    "desc": "Farm-fresh Avocado, handpicked to ensure maximum quality and daily nutrition.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Fruit",
+      "Packaging": "Loose/Box",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Ball Pen",
+    "desc": "Premium quality Ball Pen, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Ball",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Banana",
+    "desc": "Farm-fresh Banana, handpicked to ensure maximum quality and daily nutrition.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Fruit",
+      "Packaging": "Loose/Box",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Basmati Rice (5kg)",
+    "desc": "High-quality, unadulterated Basmati Rice (5kg) for wholesome and nutritious family meals.",
+    "high": {
+      "Brand": "Basmati",
+      "Type": "Staples & Grains",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Beans",
+    "desc": "Locally sourced, fresh Beans delivered straight to your kitchen.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Vegetable",
+      "Packaging": "Loose/Bag",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Besan",
+    "desc": "High-quality, unadulterated Besan for wholesome and nutritious family meals.",
+    "high": {
+      "Brand": "Besan",
+      "Type": "Staples & Grains",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Bhuna Chana",
+    "desc": "High-quality, unadulterated Bhuna Chana for wholesome and nutritious family meals.",
+    "high": {
+      "Brand": "Bhuna",
+      "Type": "Staples & Grains",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Black Pepper",
+    "desc": "Premium quality Black Pepper, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Black",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Bournvita",
+    "desc": "Premium quality Bournvita, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Bournvita",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Brinjal",
+    "desc": "Locally sourced, fresh Brinjal delivered straight to your kitchen.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Vegetable",
+      "Packaging": "Loose/Bag",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Broccoli",
+    "desc": "Locally sourced, fresh Broccoli delivered straight to your kitchen.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Vegetable",
+      "Packaging": "Loose/Bag",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Buldak Ramen",
+    "desc": "Premium quality Buldak Ramen, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Buldak",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Butter (Big)",
+    "desc": "Rich and creamy Butter (Big), perfect for all your cooking and snacking needs.",
+    "high": {
+      "Brand": "Butter",
+      "Type": "Dairy",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Butter (Small)",
+    "desc": "Rich and creamy Butter (Small), perfect for all your cooking and snacking needs.",
+    "high": {
+      "Brand": "Butter",
+      "Type": "Dairy",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Cabbage",
+    "desc": "Locally sourced, fresh Cabbage delivered straight to your kitchen.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Vegetable",
+      "Packaging": "Loose/Bag",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Capsicum",
+    "desc": "Locally sourced, fresh Capsicum delivered straight to your kitchen.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Vegetable",
+      "Packaging": "Loose/Bag",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Carrot",
+    "desc": "Locally sourced, fresh Carrot delivered straight to your kitchen.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Vegetable",
+      "Packaging": "Loose/Bag",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Cauliflower",
+    "desc": "Locally sourced, fresh Cauliflower delivered straight to your kitchen.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Vegetable",
+      "Packaging": "Loose/Bag",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Cetaphil Face Wash",
+    "desc": "Gentle and effective Cetaphil Face Wash for daily personal hygiene and refreshing care.",
+    "high": {
+      "Brand": "Cetaphil",
+      "Type": "Personal Care",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Chat Masala",
+    "desc": "Authentic and aromatic Chat Masala to bring out the best flavors in your meals.",
+    "high": {
+      "Brand": "Chat",
+      "Type": "Spices & Condiments",
+      "Packaging": "Sealed Pouch/Jar",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Cheese Slices",
+    "desc": "Rich and creamy Cheese Slices, perfect for all your cooking and snacking needs.",
+    "high": {
+      "Brand": "Cheese",
+      "Type": "Dairy",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Chicken Masala",
+    "desc": "Authentic and aromatic Chicken Masala to bring out the best flavors in your meals.",
+    "high": {
+      "Brand": "Chicken",
+      "Type": "Spices & Condiments",
+      "Packaging": "Sealed Pouch/Jar",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Chilli Flakes",
+    "desc": "Authentic and aromatic Chilli Flakes to bring out the best flavors in your meals.",
+    "high": {
+      "Brand": "Chilli",
+      "Type": "Spices & Condiments",
+      "Packaging": "Sealed Pouch/Jar",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Chilli Powder (100g)",
+    "desc": "Authentic and aromatic Chilli Powder (100g) to bring out the best flavors in your meals.",
+    "high": {
+      "Brand": "Chilli",
+      "Type": "Spices & Condiments",
+      "Packaging": "Sealed Pouch/Jar",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Chilli Powder (200g)",
+    "desc": "Authentic and aromatic Chilli Powder (200g) to bring out the best flavors in your meals.",
+    "high": {
+      "Brand": "Chilli",
+      "Type": "Spices & Condiments",
+      "Packaging": "Sealed Pouch/Jar",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Chillies",
+    "desc": "Authentic and aromatic Chillies to bring out the best flavors in your meals.",
+    "high": {
+      "Brand": "Chillies",
+      "Type": "Spices & Condiments",
+      "Packaging": "Sealed Pouch/Jar",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Chips (Lays/Kurkure/Uncle Chips)",
+    "desc": "Premium quality Chips (Lays/Kurkure/Uncle Chips), carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Kurkure",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Chocos",
+    "desc": "Premium quality Chocos, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Chocos",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Choki Choki",
+    "desc": "Premium quality Choki Choki, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Choki",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Chole Chickpeas",
+    "desc": "Premium quality Chole Chickpeas, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Chole",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Chowmein",
+    "desc": "Premium quality Chowmein, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Chowmein",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Chupa Chups",
+    "desc": "Premium quality Chupa Chups, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Chupa",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Cinthol Lime Soap",
+    "desc": "Gentle and effective Cinthol Lime Soap for daily personal hygiene and refreshing care.",
+    "high": {
+      "Brand": "Cinthol",
+      "Type": "Personal Care",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Clinic Plus Shampoo",
+    "desc": "Gentle and effective Clinic Plus Shampoo for daily personal hygiene and refreshing care.",
+    "high": {
+      "Brand": "Clinic",
+      "Type": "Personal Care",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Close Up",
+    "desc": "Premium quality Close Up, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Close",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Cocon Jelly (3 pc)",
+    "desc": "Premium quality Cocon Jelly (3 pc), carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Cocon",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Cocon Jelly (6 pc)",
+    "desc": "Premium quality Cocon Jelly (6 pc), carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Cocon",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Coconut",
+    "desc": "Premium quality Coconut, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Coconut",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Colgate",
+    "desc": "Premium quality Colgate, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Colgate",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Comfort Fabric Conditioner",
+    "desc": "Gentle and effective Comfort Fabric Conditioner for daily personal hygiene and refreshing care.",
+    "high": {
+      "Brand": "Comfort",
+      "Type": "Personal Care",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Coriander",
+    "desc": "Authentic and aromatic Coriander to bring out the best flavors in your meals.",
+    "high": {
+      "Brand": "Coriander",
+      "Type": "Spices & Condiments",
+      "Packaging": "Sealed Pouch/Jar",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Coriander Powder",
+    "desc": "Authentic and aromatic Coriander Powder to bring out the best flavors in your meals.",
+    "high": {
+      "Brand": "Coriander",
+      "Type": "Spices & Condiments",
+      "Packaging": "Sealed Pouch/Jar",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Corn Flakes Original",
+    "desc": "Premium quality Corn Flakes Original, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Corn",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Cucumber",
+    "desc": "Locally sourced, fresh Cucumber delivered straight to your kitchen.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Vegetable",
+      "Packaging": "Loose/Bag",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Dairy Milk",
+    "desc": "Rich and creamy Dairy Milk, perfect for all your cooking and snacking needs.",
+    "high": {
+      "Brand": "Dairy",
+      "Type": "Dairy",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Dairy Milk Oreo",
+    "desc": "Rich and creamy Dairy Milk Oreo, perfect for all your cooking and snacking needs.",
+    "high": {
+      "Brand": "Oreo",
+      "Type": "Dairy",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Dairy Milk Silk",
+    "desc": "Rich and creamy Dairy Milk Silk, perfect for all your cooking and snacking needs.",
+    "high": {
+      "Brand": "Dairy",
+      "Type": "Dairy",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Dark Fantasy Biscuits",
+    "desc": "Delicious Dark Fantasy Biscuits, the perfect treat to satisfy your sweet cravings anytime.",
+    "high": {
+      "Brand": "Fanta",
+      "Type": "Snacks & Sweets",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Dettol Antiseptic Liquid",
+    "desc": "Premium quality Dettol Antiseptic Liquid, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Dettol",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Dettol Hand Wash",
+    "desc": "Tough on stains, Dettol Hand Wash leaves your clothes fresh and brilliantly clean.",
+    "high": {
+      "Brand": "Dettol",
+      "Type": "Household Cleaning",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Dettol Soap",
+    "desc": "Gentle and effective Dettol Soap for daily personal hygiene and refreshing care.",
+    "high": {
+      "Brand": "Dettol",
+      "Type": "Personal Care",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Diet Coke",
+    "desc": "Chilled and refreshing Diet Coke to instantly quench your thirst.",
+    "high": {
+      "Brand": "Coke",
+      "Type": "Beverage",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Digestive Biscuits",
+    "desc": "Delicious Digestive Biscuits, the perfect treat to satisfy your sweet cravings anytime.",
+    "high": {
+      "Brand": "Digestive",
+      "Type": "Snacks & Sweets",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Dot and Key Face Wash",
+    "desc": "Gentle and effective Dot and Key Face Wash for daily personal hygiene and refreshing care.",
+    "high": {
+      "Brand": "Dot",
+      "Type": "Personal Care",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Dove Conditioner",
+    "desc": "Gentle and effective Dove Conditioner for daily personal hygiene and refreshing care.",
+    "high": {
+      "Brand": "Dove",
+      "Type": "Personal Care",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Dove Shampoo",
+    "desc": "Gentle and effective Dove Shampoo for daily personal hygiene and refreshing care.",
+    "high": {
+      "Brand": "Dove",
+      "Type": "Personal Care",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Dove Soap",
+    "desc": "Gentle and effective Dove Soap for daily personal hygiene and refreshing care.",
+    "high": {
+      "Brand": "Dove",
+      "Type": "Personal Care",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Dragon Fruit",
+    "desc": "Farm-fresh Dragon Fruit, handpicked to ensure maximum quality and daily nutrition.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Fruit",
+      "Packaging": "Loose/Box",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Everyday Dairy Whitener",
+    "desc": "Premium quality Everyday Dairy Whitener, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Everyday",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Exo Dishwash Bar",
+    "desc": "Tough on stains, Exo Dishwash Bar leaves your clothes fresh and brilliantly clean.",
+    "high": {
+      "Brand": "Exo",
+      "Type": "Household Cleaning",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Fanta",
+    "desc": "Chilled and refreshing Fanta to instantly quench your thirst.",
+    "high": {
+      "Brand": "Fanta",
+      "Type": "Beverage",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Fortune Basmati Rice",
+    "desc": "High-quality, unadulterated Fortune Basmati Rice for wholesome and nutritious family meals.",
+    "high": {
+      "Brand": "Fortune",
+      "Type": "Staples & Grains",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Fortune Mustard Oil",
+    "desc": "Premium quality Fortune Mustard Oil, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Fortune",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Frooti",
+    "desc": "Premium quality Frooti, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Frooti",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Galaxy",
+    "desc": "Premium quality Galaxy, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Galaxy",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Garam Masala",
+    "desc": "Authentic and aromatic Garam Masala to bring out the best flavors in your meals.",
+    "high": {
+      "Brand": "Garam",
+      "Type": "Spices & Condiments",
+      "Packaging": "Sealed Pouch/Jar",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Garlic",
+    "desc": "Locally sourced, fresh Garlic delivered straight to your kitchen.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Vegetable",
+      "Packaging": "Loose/Bag",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Gel Pen",
+    "desc": "Premium quality Gel Pen, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Gel",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Gems",
+    "desc": "Delicious Gems, the perfect treat to satisfy your sweet cravings anytime.",
+    "high": {
+      "Brand": "Gems",
+      "Type": "Snacks & Sweets",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Ginger",
+    "desc": "Locally sourced, fresh Ginger delivered straight to your kitchen.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Vegetable",
+      "Packaging": "Loose/Bag",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Good Day Biscuits",
+    "desc": "Delicious Good Day Biscuits, the perfect treat to satisfy your sweet cravings anytime.",
+    "high": {
+      "Brand": "Good",
+      "Type": "Snacks & Sweets",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Goodnight",
+    "desc": "Premium quality Goodnight, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Goodnight",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Grapes",
+    "desc": "Farm-fresh Grapes, handpicked to ensure maximum quality and daily nutrition.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Fruit",
+      "Packaging": "Loose/Box",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Green Peas",
+    "desc": "Premium quality Green Peas, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Green",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Guava",
+    "desc": "Farm-fresh Guava, handpicked to ensure maximum quality and daily nutrition.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Fruit",
+      "Packaging": "Loose/Box",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Gulab Jamun",
+    "desc": "Premium quality Gulab Jamun, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Gulab",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Happydent",
+    "desc": "Premium quality Happydent, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Happydent",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Head & Shoulders",
+    "desc": "Premium quality Head & Shoulders, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Head",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Hide and Seek Biscuits",
+    "desc": "Delicious Hide and Seek Biscuits, the perfect treat to satisfy your sweet cravings anytime.",
+    "high": {
+      "Brand": "Hide",
+      "Type": "Snacks & Sweets",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Horlicks",
+    "desc": "Premium quality Horlicks, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Horlicks",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Jeera Powder",
+    "desc": "Authentic and aromatic Jeera Powder to bring out the best flavors in your meals.",
+    "high": {
+      "Brand": "Jeera",
+      "Type": "Spices & Condiments",
+      "Packaging": "Sealed Pouch/Jar",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Kaju Katli",
+    "desc": "Premium quality Kaju Katli, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Kaju",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Kala Chana",
+    "desc": "High-quality, unadulterated Kala Chana for wholesome and nutritious family meals.",
+    "high": {
+      "Brand": "Kala",
+      "Type": "Staples & Grains",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Kden Rice",
+    "desc": "High-quality, unadulterated Kden Rice for wholesome and nutritious family meals.",
+    "high": {
+      "Brand": "Kden",
+      "Type": "Staples & Grains",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Kinder Joy",
+    "desc": "Premium quality Kinder Joy, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Kinder",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Kissan Jam",
+    "desc": "Premium quality Kissan Jam, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Kissan",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Kitkat",
+    "desc": "Delicious Kitkat, the perfect treat to satisfy your sweet cravings anytime.",
+    "high": {
+      "Brand": "Kitkat",
+      "Type": "Snacks & Sweets",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Kiwi",
+    "desc": "Farm-fresh Kiwi, handpicked to ensure maximum quality and daily nutrition.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Fruit",
+      "Packaging": "Loose/Box",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Kopiko",
+    "desc": "Premium quality Kopiko, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Kopiko",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Krack Jack",
+    "desc": "Premium quality Krack Jack, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Krack",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Laddu by Lal",
+    "desc": "Premium quality Laddu by Lal, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Laddu",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Lady Finger",
+    "desc": "Locally sourced, fresh Lady Finger delivered straight to your kitchen.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Vegetable",
+      "Packaging": "Loose/Bag",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Lemon",
+    "desc": "Farm-fresh Lemon, handpicked to ensure maximum quality and daily nutrition.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Fruit",
+      "Packaging": "Loose/Box",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Lettuce",
+    "desc": "Locally sourced, fresh Lettuce delivered straight to your kitchen.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Vegetable",
+      "Packaging": "Loose/Bag",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Lifebuoy Soap",
+    "desc": "Gentle and effective Lifebuoy Soap for daily personal hygiene and refreshing care.",
+    "high": {
+      "Brand": "Lifebuoy",
+      "Type": "Personal Care",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Lipton Honey Lemon Green Tea",
+    "desc": "Farm-fresh Lipton Honey Lemon Green Tea, handpicked to ensure maximum quality and daily nutrition.",
+    "high": {
+      "Brand": "Lipton",
+      "Type": "Fresh Fruit",
+      "Packaging": "Loose/Box",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Little Hearts",
+    "desc": "Premium quality Little Hearts, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Little",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Loreal Conditioner",
+    "desc": "Gentle and effective Loreal Conditioner for daily personal hygiene and refreshing care.",
+    "high": {
+      "Brand": "Loreal",
+      "Type": "Personal Care",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Loreal Paris Shampoo",
+    "desc": "Gentle and effective Loreal Paris Shampoo for daily personal hygiene and refreshing care.",
+    "high": {
+      "Brand": "Loreal",
+      "Type": "Personal Care",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Lux Soap",
+    "desc": "Gentle and effective Lux Soap for daily personal hygiene and refreshing care.",
+    "high": {
+      "Brand": "Lux",
+      "Type": "Personal Care",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Maaza",
+    "desc": "Chilled and refreshing Maaza to instantly quench your thirst.",
+    "high": {
+      "Brand": "Maaza",
+      "Type": "Beverage",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Maggi",
+    "desc": "Premium quality Maggi, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Maggi",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Maida (1kg)",
+    "desc": "High-quality, unadulterated Maida (1kg) for wholesome and nutritious family meals.",
+    "high": {
+      "Brand": "Maida",
+      "Type": "Staples & Grains",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Maida (500g)",
+    "desc": "High-quality, unadulterated Maida (500g) for wholesome and nutritious family meals.",
+    "high": {
+      "Brand": "Maida",
+      "Type": "Staples & Grains",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Masoor Dal",
+    "desc": "High-quality, unadulterated Masoor Dal for wholesome and nutritious family meals.",
+    "high": {
+      "Brand": "Masoor",
+      "Type": "Staples & Grains",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Mayonnaise",
+    "desc": "Premium quality Mayonnaise, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Mayonnaise",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Meat Masala",
+    "desc": "Authentic and aromatic Meat Masala to bring out the best flavors in your meals.",
+    "high": {
+      "Brand": "Meat",
+      "Type": "Spices & Condiments",
+      "Packaging": "Sealed Pouch/Jar",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Milk Bikis Atta Biscuit",
+    "desc": "Rich and creamy Milk Bikis Atta Biscuit, perfect for all your cooking and snacking needs.",
+    "high": {
+      "Brand": "Milk",
+      "Type": "Dairy",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Milk Cake",
+    "desc": "Rich and creamy Milk Cake, perfect for all your cooking and snacking needs.",
+    "high": {
+      "Brand": "Milk",
+      "Type": "Dairy",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Mogu Mogu",
+    "desc": "Premium quality Mogu Mogu, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Mogu",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Monaco Chessling Biscuit",
+    "desc": "Delicious Monaco Chessling Biscuit, the perfect treat to satisfy your sweet cravings anytime.",
+    "high": {
+      "Brand": "Monaco",
+      "Type": "Snacks & Sweets",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Mountain Dew",
+    "desc": "Premium quality Mountain Dew, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Mountain",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Munch",
+    "desc": "Premium quality Munch, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Munch",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Mutton Masala",
+    "desc": "Authentic and aromatic Mutton Masala to bring out the best flavors in your meals.",
+    "high": {
+      "Brand": "Mutton",
+      "Type": "Spices & Condiments",
+      "Packaging": "Sealed Pouch/Jar",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Nescafe Classic Coffee (2 pc)",
+    "desc": "Premium quality Nescafe Classic Coffee (2 pc), carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Nescafe",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Nescafe Classic Coffee (24g)",
+    "desc": "Premium quality Nescafe Classic Coffee (24g), carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Nescafe",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Nescafe Classic Coffee (45g)",
+    "desc": "Premium quality Nescafe Classic Coffee (45g), carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Nescafe",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Nivea Body Lotion",
+    "desc": "Gentle and effective Nivea Body Lotion for daily personal hygiene and refreshing care.",
+    "high": {
+      "Brand": "Nivea",
+      "Type": "Personal Care",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Nivea Men Face Wash",
+    "desc": "Gentle and effective Nivea Men Face Wash for daily personal hygiene and refreshing care.",
+    "high": {
+      "Brand": "Nivea",
+      "Type": "Personal Care",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Notebook",
+    "desc": "Premium quality Notebook, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Notebook",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Nutella",
+    "desc": "Premium quality Nutella, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Nutella",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Onion",
+    "desc": "Locally sourced, fresh Onion delivered straight to your kitchen.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Vegetable",
+      "Packaging": "Loose/Bag",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Orange",
+    "desc": "Farm-fresh Orange, handpicked to ensure maximum quality and daily nutrition.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Fruit",
+      "Packaging": "Loose/Box",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Orbit Chewing Gum",
+    "desc": "Premium quality Orbit Chewing Gum, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Orbit",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Oregano",
+    "desc": "Authentic and aromatic Oregano to bring out the best flavors in your meals.",
+    "high": {
+      "Brand": "Oregano",
+      "Type": "Spices & Condiments",
+      "Packaging": "Sealed Pouch/Jar",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Oreo Biscuits",
+    "desc": "Delicious Oreo Biscuits, the perfect treat to satisfy your sweet cravings anytime.",
+    "high": {
+      "Brand": "Oreo",
+      "Type": "Snacks & Sweets",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Papaya",
+    "desc": "Farm-fresh Papaya, handpicked to ensure maximum quality and daily nutrition.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Fruit",
+      "Packaging": "Loose/Box",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Parle-G",
+    "desc": "Premium quality Parle-G, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Parle-G",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Parmal Rice",
+    "desc": "High-quality, unadulterated Parmal Rice for wholesome and nutritious family meals.",
+    "high": {
+      "Brand": "Parmal",
+      "Type": "Staples & Grains",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Peanut Butter",
+    "desc": "Rich and creamy Peanut Butter, perfect for all your cooking and snacking needs.",
+    "high": {
+      "Brand": "Peanut",
+      "Type": "Dairy",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Pears Soap",
+    "desc": "Gentle and effective Pears Soap for daily personal hygiene and refreshing care.",
+    "high": {
+      "Brand": "Pears",
+      "Type": "Personal Care",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Pepsi",
+    "desc": "Chilled and refreshing Pepsi to instantly quench your thirst.",
+    "high": {
+      "Brand": "Pepsi",
+      "Type": "Beverage",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Pineapple",
+    "desc": "Farm-fresh Pineapple, handpicked to ensure maximum quality and daily nutrition.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Fruit",
+      "Packaging": "Loose/Box",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Piri Piri",
+    "desc": "Premium quality Piri Piri, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Piri",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Plum Face Wash",
+    "desc": "Gentle and effective Plum Face Wash for daily personal hygiene and refreshing care.",
+    "high": {
+      "Brand": "Plum",
+      "Type": "Personal Care",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Pomegranate",
+    "desc": "Farm-fresh Pomegranate, handpicked to ensure maximum quality and daily nutrition.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Fruit",
+      "Packaging": "Loose/Box",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Pomegranate (2 pc)",
+    "desc": "Farm-fresh Pomegranate (2 pc), handpicked to ensure maximum quality and daily nutrition.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Fruit",
+      "Packaging": "Loose/Box",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Potato",
+    "desc": "Locally sourced, fresh Potato delivered straight to your kitchen.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Vegetable",
+      "Packaging": "Loose/Bag",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Pudina (Mint)",
+    "desc": "Locally sourced, fresh Pudina (Mint) delivered straight to your kitchen.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Vegetable",
+      "Packaging": "Loose/Bag",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Pulse",
+    "desc": "Premium quality Pulse, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Pulse",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Quaker Rolled Instant Oats",
+    "desc": "Premium quality Quaker Rolled Instant Oats, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Quaker",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Rajma",
+    "desc": "High-quality, unadulterated Rajma for wholesome and nutritious family meals.",
+    "high": {
+      "Brand": "Rajma",
+      "Type": "Staples & Grains",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Rasgulla",
+    "desc": "Premium quality Rasgulla, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Rasgulla",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Red Label Tea",
+    "desc": "Premium quality Red Label Tea, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Red Label",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Redbull",
+    "desc": "Chilled and refreshing Redbull to instantly quench your thirst.",
+    "high": {
+      "Brand": "Redbull",
+      "Type": "Beverage",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Refined Oil",
+    "desc": "Premium quality Refined Oil, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Refined",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Regular Coke",
+    "desc": "Chilled and refreshing Regular Coke to instantly quench your thirst.",
+    "high": {
+      "Brand": "Coke",
+      "Type": "Beverage",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Rin Detergent",
+    "desc": "Tough on stains, Rin Detergent leaves your clothes fresh and brilliantly clean.",
+    "high": {
+      "Brand": "Rin",
+      "Type": "Household Cleaning",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Salt",
+    "desc": "Authentic and aromatic Salt to bring out the best flavors in your meals.",
+    "high": {
+      "Brand": "Salt",
+      "Type": "Spices & Condiments",
+      "Packaging": "Sealed Pouch/Jar",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Sdy (Stayfree)",
+    "desc": "Premium quality Sdy (Stayfree), carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Sdy",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Sensodyne",
+    "desc": "Premium quality Sensodyne, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Sensodyne",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Sensodyne Toothbrush",
+    "desc": "Premium quality Sensodyne Toothbrush, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Sensodyne",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Shredded Mozzarella Cheese",
+    "desc": "Rich and creamy Shredded Mozzarella Cheese, perfect for all your cooking and snacking needs.",
+    "high": {
+      "Brand": "Shredded",
+      "Type": "Dairy",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Snickers",
+    "desc": "Delicious Snickers, the perfect treat to satisfy your sweet cravings anytime.",
+    "high": {
+      "Brand": "Snickers",
+      "Type": "Snacks & Sweets",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Sooji",
+    "desc": "High-quality, unadulterated Sooji for wholesome and nutritious family meals.",
+    "high": {
+      "Brand": "Sooji",
+      "Type": "Staples & Grains",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Soya Sauce",
+    "desc": "Premium quality Soya Sauce, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Soya",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Spinach",
+    "desc": "Locally sourced, fresh Spinach delivered straight to your kitchen.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Vegetable",
+      "Packaging": "Loose/Bag",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Sponge Loofah",
+    "desc": "Premium quality Sponge Loofah, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Sponge",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Spring Onion",
+    "desc": "Locally sourced, fresh Spring Onion delivered straight to your kitchen.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Vegetable",
+      "Packaging": "Loose/Bag",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Sprite",
+    "desc": "Chilled and refreshing Sprite to instantly quench your thirst.",
+    "high": {
+      "Brand": "Sprite",
+      "Type": "Beverage",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Stayfree",
+    "desc": "Premium quality Stayfree, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Stayfree",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Strawberry",
+    "desc": "Farm-fresh Strawberry, handpicked to ensure maximum quality and daily nutrition.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Fruit",
+      "Packaging": "Loose/Box",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Sunsilk Shampoo",
+    "desc": "Gentle and effective Sunsilk Shampoo for daily personal hygiene and refreshing care.",
+    "high": {
+      "Brand": "Sunsilk",
+      "Type": "Personal Care",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Surf",
+    "desc": "Tough on stains, Surf leaves your clothes fresh and brilliantly clean.",
+    "high": {
+      "Brand": "Surf",
+      "Type": "Household Cleaning",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Surf Excel Soap",
+    "desc": "Gentle and effective Surf Excel Soap for daily personal hygiene and refreshing care.",
+    "high": {
+      "Brand": "Surf Excel",
+      "Type": "Personal Care",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Thumbs Up",
+    "desc": "Premium quality Thumbs Up, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Thumbs",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Tide",
+    "desc": "Tough on stains, Tide leaves your clothes fresh and brilliantly clean.",
+    "high": {
+      "Brand": "Tide",
+      "Type": "Household Cleaning",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Tissues",
+    "desc": "Premium quality Tissues, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Tissues",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Tomato",
+    "desc": "Locally sourced, fresh Tomato delivered straight to your kitchen.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Vegetable",
+      "Packaging": "Loose/Bag",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Tomato Ketchup",
+    "desc": "Locally sourced, fresh Tomato Ketchup delivered straight to your kitchen.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Vegetable",
+      "Packaging": "Loose/Bag",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Tresemme Conditioner",
+    "desc": "Gentle and effective Tresemme Conditioner for daily personal hygiene and refreshing care.",
+    "high": {
+      "Brand": "Tresemme",
+      "Type": "Personal Care",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Tresemme Shampoo",
+    "desc": "Gentle and effective Tresemme Shampoo for daily personal hygiene and refreshing care.",
+    "high": {
+      "Brand": "Tresemme",
+      "Type": "Personal Care",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Turmeric Powder",
+    "desc": "Authentic and aromatic Turmeric Powder to bring out the best flavors in your meals.",
+    "high": {
+      "Brand": "Turmeric",
+      "Type": "Spices & Condiments",
+      "Packaging": "Sealed Pouch/Jar",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Twix",
+    "desc": "Premium quality Twix, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Twix",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Vaseline Body Lotion",
+    "desc": "Gentle and effective Vaseline Body Lotion for daily personal hygiene and refreshing care.",
+    "high": {
+      "Brand": "Vaseline",
+      "Type": "Personal Care",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Vaseline Jelly",
+    "desc": "Premium quality Vaseline Jelly, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Vaseline",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Vim Liquid",
+    "desc": "Premium quality Vim Liquid, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Vim",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Vinegar",
+    "desc": "Premium quality Vinegar, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Vinegar",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Wai Wai Noodles",
+    "desc": "Premium quality Wai Wai Noodles, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Wai",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Watermelon",
+    "desc": "Farm-fresh Watermelon, handpicked to ensure maximum quality and daily nutrition.",
+    "high": {
+      "Brand": "Fresh Produce",
+      "Type": "Fresh Fruit",
+      "Packaging": "Loose/Box",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Wheel",
+    "desc": "Premium quality Wheel, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Wheel",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Whisper",
+    "desc": "Premium quality Whisper, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Whisper",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Yakult Drink",
+    "desc": "Premium quality Yakult Drink, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Yakult",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  },
+  {
+    "id": "Yippee Noodles",
+    "desc": "Premium quality Yippee Noodles, carefully sourced for your everyday needs.",
+    "high": {
+      "Brand": "Yippee",
+      "Type": "Grocery",
+      "Packaging": "Standard Pack",
+      "Quality": "Premium"
+    }
+  }
+]

@@ -15,6 +15,7 @@ import OrderSuccessPage from './pages/OrderSuccessPage'
 import LoginPage from './pages/LoginPage'
 import SplashScreen from './pages/SplashScreen'
 import SupportPage from './pages/SupportPage'
+import ProductDetailPage from './pages/ProductDetailPage'
 
 // Admin App Pages
 import AdminLayout from './pages/admin/AdminLayout'
@@ -74,8 +75,9 @@ function AppRoutes() {
   const isAdminRoute = location.pathname.startsWith('/admin')
   const isStoreRoute = location.pathname.startsWith('/store')
   const isDeliveryRoute = location.pathname.startsWith('/delivery')
+  const isProductRoute = location.pathname.startsWith('/product/')
   
-  const showCustomerNav = !isAdminRoute && !isStoreRoute && !isDeliveryRoute
+  const showCustomerNav = !isAdminRoute && !isStoreRoute && !isDeliveryRoute && !isProductRoute
 
   useEffect(() => {
     // Initialize Theme
@@ -100,6 +102,7 @@ function AppRoutes() {
         <Route path="/category/:id" element={<CategoryPage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/product/:id" element={<ProductDetailPage />} />
 
         {/* Protected customer routes */}
         <Route path="/cart" element={<ProtectedRoute><CartPage /></ProtectedRoute>} />

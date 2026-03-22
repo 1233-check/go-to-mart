@@ -23,9 +23,14 @@
 }
 
 .admin-brand img {
-  width: 32px;
   height: 32px;
-  border-radius: 8px;
+  width: auto;
+  object-fit: contain;
+  object-position: left center;
+  background: transparent;
+  border-radius: 0;
+  clip-path: none;
+  transform: none;
 }
 
 .admin-brand h2 {

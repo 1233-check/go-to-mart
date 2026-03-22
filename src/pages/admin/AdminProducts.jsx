@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { supabase } from '../../lib/supabase'
 import { Search, Plus, Edit2, Archive, ArchiveRestore, Upload, AlertTriangle } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
+import ReactQuill from 'react-quill'
+import 'react-quill/dist/quill.snow.css'
 
 export default function AdminProducts() {
   const { role } = useAuth()
@@ -144,9 +146,11 @@ export default function AdminProducts() {
             <input required type="text" value={editForm.name} onChange={e => setEditForm({...editForm, name: e.target.value})} style={{ width: '100%', padding: '10px 14px', background: '#0f172a', border: '1px solid #334155', borderRadius: '8px', color: 'white', outline: 'none' }} />
           </div>
 
-          <div>
+          <div style={{ marginBottom: '40px' }}>
             <label style={{ display: 'block', marginBottom: '8px', color: '#94a3b8', fontSize: '13px' }}>Description</label>
-            <textarea value={editForm.description} onChange={e => setEditForm({...editForm, description: e.target.value})} rows={3} placeholder="Product description..." style={{ width: '100%', padding: '10px 14px', background: '#0f172a', border: '1px solid #334155', borderRadius: '8px', color: 'white', outline: 'none', resize: 'vertical', fontFamily: 'inherit' }} />
+            <div style={{ background: 'white', color: 'black', borderRadius: '8px', overflow: 'hidden' }}>
+              <ReactQuill theme="snow" value={editForm.description} onChange={(val) => setEditForm({...editForm, description: val})} />
+            </div>
           </div>
           
           <div style={{ display: 'flex', gap: '16px' }}>
