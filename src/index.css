@@ -1365,14 +1365,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .login-logo {
-  width: 72px;
-  height: 72px;
+  width: 120px;
+  height: 120px;
   border-radius: 16px;
   margin-bottom: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  object-fit: cover;
-  transform: scale(1.8);
-  clip-path: inset(0 round 16px);
+  object-fit: contain;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  transform: none;
+  clip-path: none;
 }
 
 .login-brand h1 {
