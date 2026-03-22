@@ -34,9 +34,6 @@ export default function ProductCard({ product }) {
       <div className="product-info">
         <p className="product-name">{product.name}</p>
         <p className="product-unit">{product.unit}</p>
-        <p className="product-desc">
-          {product.description || "Fresh & premium quality everyday essentials, delivered instantly."}
-        </p>
         <div className="product-bottom">
           <div>
             <span className="product-price">₹{Number(product.price).toFixed(0)}</span>
