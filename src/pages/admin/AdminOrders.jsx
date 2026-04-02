@@ -127,7 +127,21 @@ export default function AdminOrders() {
                     <td>
                       <div style={{ fontWeight: 600, color: '#f8fafc', marginBottom: '4px' }}>#{o.order_number}</div>
                       <div style={{ fontSize: '12px', color: '#94a3b8' }}>{new Date(o.created_at).toLocaleString()}</div>
-                      <div style={{ fontSize: '12px', color: '#94a3b8', marginTop: '4px' }}>{o.payment_method === 'cod' ? 'Cash on Delivery' : 'Online'}</div>
+                      <div style={{ fontSize: '12px', color: '#94a3b8', marginTop: '4px' }}>
+                        {o.payment_method === 'cod' ? '💵 COD' : '💳 Online'}
+                        {o.payment_method !== 'cod' && (
+                          <span style={{
+                            marginLeft: '6px', fontSize: '10px', fontWeight: 600, padding: '2px 6px', borderRadius: '4px',
+                            background: o.payment_status === 'paid' ? 'rgba(16,185,129,0.15)' : 'rgba(245,158,11,0.15)',
+                            color: o.payment_status === 'paid' ? '#10b981' : '#f59e0b',
+                          }}>
+                            {o.payment_status === 'paid' ? '✓ Paid' : '⏳ Pending'}
+                          </span>
+                        )}
+                      </div>
+                      {o.razorpay_payment_id && (
+                        <div style={{ fontSize: '10px', color: '#64748b', marginTop: '2px', fontFamily: 'monospace' }}>ID: {o.razorpay_payment_id}</div>
+                      )}
                     </td>
                     <td>
                       <div style={{ color: '#f8fafc', marginBottom: '4px' }}>{o.customer_name}</div>

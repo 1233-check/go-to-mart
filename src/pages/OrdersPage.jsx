@@ -118,6 +118,15 @@ export default function OrdersPage() {
                   </div>
                   <span className="order-card-method">
                     {order.payment_method === 'cod' ? '💵 COD' : '💳 Online'}
+                    {order.payment_method !== 'cod' && (
+                      <span style={{
+                        marginLeft: '6px', fontSize: '10px', fontWeight: 600, padding: '1px 5px', borderRadius: '4px',
+                        background: order.payment_status === 'paid' ? 'rgba(22,163,74,0.15)' : 'rgba(217,119,6,0.15)',
+                        color: order.payment_status === 'paid' ? '#16a34a' : '#d97706',
+                      }}>
+                        {order.payment_status === 'paid' ? '✓ Paid' : '⏳ Pending'}
+                      </span>
+                    )}
                   </span>
                 </div>
 

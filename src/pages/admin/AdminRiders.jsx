@@ -11,6 +11,8 @@ export default function AdminRiders() {
   const [searchLoading, setSearchLoading] = useState(false)
   const [searchError, setSearchError] = useState('')
   const [riderStats, setRiderStats] = useState({})
+  const [riderEarnings, setRiderEarnings] = useState({})
+  const [pendingPayouts, setPendingPayouts] = useState([])
 
   const fetchRiders = async () => {
     setLoading(true)
@@ -45,6 +47,32 @@ export default function AdminRiders() {
 
     setRiderStats(statsMap)
     setRiders(data || [])
+
+    // Fetch earnings for all riders
+    const earningsMap = {}
+    if (data) {
+      for (const rider of data) {
+        const { data: earningsData } = await supabase
+          .from('rider_earnings')
+          .select('total_earned, status')
+          .eq('rider_id', rider.id)
+
+        const totalEarned = (earningsData || []).reduce((s, e) => s + Number(e.total_earned || 0), 0)
+        const pendingBalance = (earningsData || []).filter(e => e.status === 'pending').reduce((s, e) => s + Number(e.total_earned || 0), 0)
+
+        earningsMap[rider.id] = { totalEarned, pendingBalance }
+      }
+    }
+    setRiderEarnings(earningsMap)
+
+    // Fetch pending payouts
+    const { data: payoutsData } = await supabase
+      .from('rider_payouts')
+      .select('*')
+      .in('status', ['requested', 'processing'])
+      .order('created_at', { ascending: false })
+    setPendingPayouts(payoutsData || [])
+
     setLoading(false)
   }
 
@@ -216,6 +244,49 @@ export default function AdminRiders() {
         </div>
       </div>
 
+      {/* Pending Payouts Alert */}
+      {pendingPayouts.length > 0 && (
+        <div className="admin-card" style={{ marginBottom: '24px', border: '1px solid #f59e0b' }}>
+          <div className="admin-card-header">
+            <h3 className="admin-card-title">💰 Pending Payout Requests ({pendingPayouts.length})</h3>
+          </div>
+          <div className="admin-table-wrap">
+            <table className="admin-table">
+              <thead>
+                <tr>
+                  <th>Rider</th>
+                  <th>Amount</th>
+                  <th>Method</th>
+                  <th>Status</th>
+                  <th>Requested</th>
+                </tr>
+              </thead>
+              <tbody>
+                {pendingPayouts.map(p => {
+                  const rider = riders.find(r => r.id === p.rider_id)
+                  return (
+                    <tr key={p.id}>
+                      <td style={{ fontWeight: 600 }}>{rider?.full_name || 'Unknown'}</td>
+                      <td style={{ fontWeight: 700, color: '#22c55e' }}>₹{Number(p.amount).toFixed(0)}</td>
+                      <td>{p.payout_method === 'upi' ? `UPI: ${p.account_details?.upi_id || ''}` : 'Bank'}</td>
+                      <td>
+                        <span className="admin-badge" style={{
+                          backgroundColor: p.status === 'processing' ? 'rgba(59,130,246,0.1)' : 'rgba(245,158,11,0.1)',
+                          color: p.status === 'processing' ? '#3b82f6' : '#f59e0b'
+                        }}>
+                          {p.status === 'processing' ? '⏳ Processing' : '📝 Requested'}
+                        </span>
+                      </td>
+                      <td style={{ fontSize: '12px', color: '#94a3b8' }}>{new Date(p.created_at).toLocaleDateString()}</td>
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+
       {/* Riders Table */}
       <div className="admin-card">
         <div className="admin-card-header">
@@ -229,6 +300,7 @@ export default function AdminRiders() {
                 <th>Phone</th>
                 <th>Joined</th>
                 <th>Deliveries</th>
+                <th>Earnings</th>
                 <th>Active Orders</th>
                 <th>Status</th>
                 <th>Action</th>
@@ -236,7 +308,7 @@ export default function AdminRiders() {
             </thead>
             <tbody>
               {riders.length === 0 ? (
-                <tr><td colSpan="7" style={{ textAlign: 'center', padding: '32px', color: '#94a3b8' }}>No delivery riders yet. Appoint one above!</td></tr>
+                <tr><td colSpan="8" style={{ textAlign: 'center', padding: '32px', color: '#94a3b8' }}>No delivery riders yet. Appoint one above!</td></tr>
               ) : (
                 riders.map(r => {
                   const stat = riderStats[r.id] || { totalDeliveries: 0, activeOrders: 0 }
@@ -246,6 +318,12 @@ export default function AdminRiders() {
                       <td>{r.phone || r.email || '—'}</td>
                       <td>{new Date(r.created_at).toLocaleDateString()}</td>
                       <td>{stat.totalDeliveries}</td>
+                      <td>
+                        <div style={{ fontSize: '13px', fontWeight: 700, color: '#22c55e' }}>₹{(riderEarnings[r.id]?.totalEarned || 0).toFixed(0)}</div>
+                        {(riderEarnings[r.id]?.pendingBalance || 0) > 0 && (
+                          <div style={{ fontSize: '10px', color: '#f59e0b', marginTop: '2px' }}>₹{riderEarnings[r.id].pendingBalance.toFixed(0)} pending</div>
+                        )}
+                      </td>
                       <td>
                         {stat.activeOrders > 0 ? (
                           <span className="admin-badge" style={{ backgroundColor: 'rgba(59, 130, 246, 0.1)', color: '#3b82f6' }}>

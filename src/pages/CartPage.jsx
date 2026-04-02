@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, ShieldCheck } from 'lucide-react'
 import { useCart } from '../context/CartContext'
 import { useAuth } from '../context/AuthContext'
 import { supabase } from '../lib/supabase'
+import { createRazorpayOrder, verifyRazorpayPayment, openRazorpayCheckout } from '../lib/razorpay'
 
 export default function CartPage() {
   const navigate = useNavigate()
@@ -18,6 +19,7 @@ export default function CartPage() {
   const [newAddrLabel, setNewAddrLabel] = useState('Home')
   const [payment, setPayment] = useState('cod')
   const [placing, setPlacing] = useState(false)
+  const [paymentError, setPaymentError] = useState('')
   
   // New Fee & Tip State
   const [deliveryDistance, setDeliveryDistance] = useState(2.5)
@@ -95,6 +97,77 @@ export default function CartPage() {
     }
   }
 
+  const createOrderInDB = async () => {
+    const { data: seqData } = await supabase.rpc('nextval_order_number')
+    const seqNum = seqData || Date.now()
+    const orderNumber = 'GTM-' + String(seqNum).padStart(4, '0')
+
+    const { data: order, error } = await supabase.from('orders').insert({
+      order_number: orderNumber,
+      customer_id: user.id,
+      delivery_address: address.trim(),
+      status: payment === 'online' ? 'pending_payment' : 'placed',
+      subtotal: totalPrice,
+      delivery_fee: deliveryFee,
+      discount: savings > 0 ? savings : 0,
+      total: grandTotal,
+      platform_fee: platformFee,
+      gst_amount: gstAmount,
+      rider_tip: tip,
+      delivery_distance_km: deliveryDistance,
+      payment_method: payment,
+      payment_status: 'pending',
+      customer_name: name.trim(),
+      customer_phone: phone.trim(),
+      estimated_delivery: '30-45 mins',
+    }).select().single()
+
+    if (error) throw error
+
+    // Insert order items
+    const items = cartItems.map(({ product, qty }) => ({
+      order_id: order.id,
+      product_id: product.id,
+      product_name: product.name,
+      product_price: Number(product.price),
+      product_image: product.image_url,
+      quantity: qty,
+      total: Number(product.price) * qty,
+    }))
+    await supabase.from('order_items').insert(items)
+
+    // Log status change
+    await supabase.from('order_status_log').insert({
+      order_id: order.id,
+      status: payment === 'online' ? 'pending_payment' : 'placed',
+      changed_by: user.id,
+      note: payment === 'online' ? 'Order created — awaiting online payment' : 'Order placed by customer'
+    })
+
+    return { order, orderNumber }
+  }
+
+  const finalizeOrder = async (orderId, orderNumber) => {
+    // For COD or after successful online payment — update status to placed
+    if (payment === 'online') {
+      await supabase.from('orders').update({ status: 'placed' }).eq('id', orderId)
+      await supabase.from('order_status_log').insert({
+        order_id: orderId,
+        status: 'placed',
+        changed_by: user.id,
+        note: 'Payment completed — order placed'
+      })
+    }
+
+    // Deduct stock quantities
+    for (const { product, qty } of cartItems) {
+      await supabase.rpc('decrement_stock', { p_product_id: product.id, p_qty: qty })
+    }
+
+    clearCart()
+    navigate('/order-success', { state: { orderNumber, total: grandTotal, paymentMethod: payment } })
+  }
+
   const handlePlaceOrder = async () => {
     if (!name.trim() || !phone.trim() || !address.trim()) {
       alert('Please fill in all delivery details')
@@ -105,64 +178,47 @@ export default function CartPage() {
       return
     }
     setPlacing(true)
+    setPaymentError('')
     try {
-      // Generate sequential order number via DB sequence
-      const { data: seqData } = await supabase.rpc('nextval_order_number')
-      const seqNum = seqData || Date.now()
-      const orderNumber = 'GTM-' + String(seqNum).padStart(4, '0')
+      // Step 1: Create order in database
+      const { order, orderNumber } = await createOrderInDB()
 
-      const { data: order, error } = await supabase.from('orders').insert({
-        order_number: orderNumber,
-        customer_id: user.id,
-        delivery_address: address.trim(),
-        status: 'placed',
-        subtotal: totalPrice,
-        delivery_fee: deliveryFee,
-        discount: savings > 0 ? savings : 0,
-        total: grandTotal,
-        platform_fee: platformFee,
-        gst_amount: gstAmount,
-        rider_tip: tip,
-        delivery_distance_km: deliveryDistance,
-        payment_method: payment,
-        payment_status: payment === 'cod' ? 'pending' : 'pending',
-        customer_name: name.trim(),
-        customer_phone: phone.trim(),
-        estimated_delivery: '30-45 mins',
-      }).select().single()
+      if (payment === 'online') {
+        // Step 2: Create Razorpay order via Edge Function
+        const razorpayData = await createRazorpayOrder(order.id, grandTotal)
 
-      if (error) throw error
+        // Step 3: Open Razorpay Checkout modal
+        const paymentResult = await openRazorpayCheckout({
+          razorpayOrderId: razorpayData.razorpay_order_id,
+          amount: razorpayData.amount,
+          currency: razorpayData.currency,
+          keyId: razorpayData.key_id,
+          customerName: name.trim(),
+          customerPhone: phone.trim(),
+          customerEmail: user?.email || '',
+          orderNumber,
+        })
 
-      // Insert order items
-      const items = cartItems.map(({ product, qty }) => ({
-        order_id: order.id,
-        product_id: product.id,
-        product_name: product.name,
-        product_price: Number(product.price),
-        product_image: product.image_url,
-        quantity: qty,
-        total: Number(product.price) * qty,
-      }))
-      await supabase.from('order_items').insert(items)
+        // Step 4: Verify payment on server
+        await verifyRazorpayPayment(
+          paymentResult.razorpay_order_id,
+          paymentResult.razorpay_payment_id,
+          paymentResult.razorpay_signature
+        )
 
-      // Log status change
-      await supabase.from('order_status_log').insert({
-        order_id: order.id,
-        status: 'placed',
-        changed_by: user.id,
-        note: 'Order placed by customer'
-      })
-
-      // Deduct stock quantities
-      for (const { product, qty } of cartItems) {
-        await supabase.rpc('decrement_stock', { p_product_id: product.id, p_qty: qty })
+        // Step 5: Finalize order
+        await finalizeOrder(order.id, orderNumber)
+      } else {
+        // COD flow — finalize immediately
+        await finalizeOrder(order.id, orderNumber)
       }
-
-      clearCart()
-      navigate('/order-success', { state: { orderNumber, total: grandTotal } })
     } catch (err) {
       console.error(err)
-      alert('Failed to place order. Please try again.')
+      if (err.message?.includes('cancelled')) {
+        setPaymentError('Payment was cancelled. Your order has been saved — you can retry payment from the orders page.')
+      } else {
+        setPaymentError(err.message || 'Failed to place order. Please try again.')
+      }
     } finally {
       setPlacing(false)
     }
@@ -418,18 +474,46 @@ export default function CartPage() {
         <div className="checkout-section">
           <h3>Payment Method</h3>
           <div className="payment-options">
+            <button className={`payment-option ${payment === 'online' ? 'active' : ''}`} onClick={() => setPayment('online')}>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                💳 Pay Online
+                <span style={{ fontSize: '10px', background: 'rgba(22,163,74,0.15)', color: 'var(--brand)', padding: '2px 6px', borderRadius: '4px', fontWeight: 600 }}>Razorpay</span>
+              </span>
+            </button>
             <button className={`payment-option ${payment === 'cod' ? 'active' : ''}`} onClick={() => setPayment('cod')}>
               💵 Cash on Delivery
             </button>
           </div>
+          {payment === 'online' && (
+            <div style={{ marginTop: '8px', display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11px', color: 'var(--text-muted)' }}>
+              <ShieldCheck size={14} color="var(--brand)" />
+              Secured by Razorpay — UPI, Cards, Netbanking, Wallets
+            </div>
+          )}
         </div>
+
+        {/* Payment Error */}
+        {paymentError && (
+          <div style={{
+            padding: '12px 16px', borderRadius: '10px', fontSize: '13px', fontWeight: 500,
+            background: 'rgba(239,68,68,0.1)', color: '#ef4444', border: '1px solid rgba(239,68,68,0.2)',
+            marginBottom: '8px',
+          }}>
+            ⚠️ {paymentError}
+          </div>
+        )}
 
         <button
           className="place-order-btn"
           onClick={handlePlaceOrder}
           disabled={placing}
         >
-          {placing ? 'Placing Order...' : `Place Order • ₹${grandTotal.toFixed(0)}`}
+          {placing
+            ? (payment === 'online' ? '⏳ Processing Payment...' : '⏳ Placing Order...')
+            : payment === 'online'
+              ? `💳 Pay ₹${grandTotal.toFixed(0)}`
+              : `Place Order • ₹${grandTotal.toFixed(0)}`
+          }
         </button>
       </div>
     </div>
