@@ -23,4 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
+.env
+.env.*
 .env*.local
+secrets_output.txt
+supabase/.temp/
